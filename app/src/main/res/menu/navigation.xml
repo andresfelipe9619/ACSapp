@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_actividad"
+        android:icon="@drawable/ic_directions_bike_black"
+        android:title="@string/titulo_actividades" />
+
+    <item
+        android:id="@+id/navigation_estrategias"
+        android:icon="@drawable/ic_beach_access_black"
+        android:title="@string/titulo_estrategias" />
+
+    <item
+        android:id="@+id/navigation_contactos"
+        android:icon="@drawable/ic_account_circle_black"
+        android:title="@string/titulo_contactos" />
+
+</menu>

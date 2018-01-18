@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ACSapp</string>
+    <string name="title_home">Home</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="titulo_actividades">Actividades</string>
+    <string name="titulo_estrategias">Estrategias</string>
+    <string name="estrategias_intro">"Si estas en crisis, marca la opcion \n con la que te sientas mas comodo  "</string>
+    <string name="titulo_emergencia">Centros de Emergencia</string>
+    <string name="titulo_contactos">Contactos</string>
+    <string name="titulo_tecnicas">Tecnicas de Relajacion</string>
+    <string name="titulo_mensaes_motivacionales">Mensajes Motivacionales</string>
+    <string name="titulo_maps">Map</string>
+</resources>
