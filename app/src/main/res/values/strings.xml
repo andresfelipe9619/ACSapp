@@ -9,5 +9,7 @@
     <string name="titulo_contactos">Contactos</string>
     <string name="titulo_tecnicas">Tecnicas de Relajacion</string>
     <string name="titulo_mensaes_motivacionales">Mensajes Motivacionales</string>
+    <string name="actividades_intro">"El deporte, las artes y la actividad social \n contribuyen a tu bienestar fisico y mental"</string>
+    <string name="app_intro">"Esta app es solo una herramienta para \nactivar en caso de tener ideas suicidas.\nNo reemplaza la atencion directa de\nun profesional en salud mental"</string>
     <string name="titulo_maps">Map</string>
 </resources>

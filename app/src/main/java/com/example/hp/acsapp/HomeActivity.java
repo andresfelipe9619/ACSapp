@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.hp.acsapp.actividades.ActividadesFragment;
+import com.example.hp.acsapp.contactos.ContactoFragment;
 import com.example.hp.acsapp.estrategias.EstrategiasFragment;
 import com.example.hp.acsapp.estrategias.EstrategiasPresenter;
 
@@ -19,7 +20,7 @@ import com.example.hp.acsapp.estrategias.EstrategiasPresenter;
  */
 
 public class HomeActivity extends AppCompatActivity implements ActividadesFragment.OnFragmentInteractionListener,
-        EstrategiasFragment.OnFragmentInteractionListener, ContactosFragment.OnFragmentInteractionListener {
+        EstrategiasFragment.OnFragmentInteractionListener, ContactoFragment.OnFragmentInteractionListener {
 
     private EstrategiasPresenter presentadorEstrategias;
     private TextView mTextMessage;
@@ -40,7 +41,7 @@ public class HomeActivity extends AppCompatActivity implements ActividadesFragme
                     transaction.replace(R.id.content, new EstrategiasFragment()).addToBackStack(null).commit();
                     return true;
                 case R.id.navigation_contactos:
-                    transaction.replace(R.id.content, new ContactosFragment()).addToBackStack(null).commit();
+                    transaction.replace(R.id.content, new ContactoFragment()).addToBackStack(null).commit();
                     return true;
             }
             return false;
@@ -52,11 +53,18 @@ public class HomeActivity extends AppCompatActivity implements ActividadesFragme
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+
+        transaction.add(R.id.content, new ActividadesFragment())
+                .addToBackStack(null)
+                .commit();
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        EstrategiasFragment fragmentoEstrategias = new EstrategiasFragment();
-        presentadorEstrategias = new EstrategiasPresenter(fragmentoEstrategias);
+//        EstrategiasFragment fragmentoEstrategias = new EstrategiasFragment();
+//        presentadorEstrategias = new EstrategiasPresenter(fragmentoEstrategias);
 
 
 
