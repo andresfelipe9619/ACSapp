@@ -28,7 +28,7 @@ public class MotivacionesPresenter implements MotivacionesContract.Presenter {
     public void loadMotivaciones() {
         //List<Motivacion> motivaciones = getMotivaciones.execute();
        // proccessMotivaciones(motivaciones);
-       // vistaMotivaciones.showMotivaciones();
+       vistaMotivaciones.showMotivaciones();
     }
 
 

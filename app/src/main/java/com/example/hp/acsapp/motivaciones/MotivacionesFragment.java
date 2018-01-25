@@ -26,11 +26,10 @@ import java.util.List;
  * Use the {@link MotivacionesFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MotivacionesFragment extends Fragment implements MotivacionesContract.View,
-MotivacionesAdapter.ListItemClickListener
+public class MotivacionesFragment extends Fragment implements MotivacionesContract.View
 {
 
-    private OnFragmentInteractionListener mListener;
+   private OnFragmentInteractionListener mListener;
     private MotivacionesContract.Presenter presentador;
     private MotivacionesAdapter adapter;
     private RecyclerView numberList;
@@ -50,27 +49,28 @@ MotivacionesAdapter.ListItemClickListener
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        adapter = new MotivacionesAdapter(NUM_LIST_ITEMS);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View root = inflater.inflate(R.layout.fragment_motivaciones, container, false);
+        numberList = (RecyclerView) root.findViewById(R.id.rv_numbers);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
 
-        return inflater.inflate(R.layout.fragment_motivaciones, container, false);
+        numberList.setHasFixedSize(true);
+
+        numberList.setLayoutManager(layoutManager);
+        numberList.setAdapter(adapter);
+        return root;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        numberList = (RecyclerView) view.findViewById(R.id.rv_numbers);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
 
-        numberList.setHasFixedSize(true);
-        
-        adapter = new MotivacionesAdapter(NUM_LIST_ITEMS, this);
-        numberList.setAdapter(adapter);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -104,10 +104,10 @@ MotivacionesAdapter.ListItemClickListener
     }
 
 
-    @Override
-    public void onListItemClick(int clickedItemIndex) {
-
-    }
+//    @Override
+//    public void onListItemClick(int clickedItemIndex) {
+//
+//    }
 
     @Override
     public void showMotivaciones() {

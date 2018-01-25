@@ -14,7 +14,7 @@ public class EstrategiasPresenter implements EstrategiasContract.Presenter {
 
     @Override
     public void openMensajesMotivacionales() {
-
+        vistaEstrategias.showMensajesMotivacionales();
     }
 
     @Override

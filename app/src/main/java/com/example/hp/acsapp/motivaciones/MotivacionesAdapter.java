@@ -16,7 +16,7 @@ import com.example.hp.acsapp.R;
 
 public class MotivacionesAdapter extends RecyclerView.Adapter<MotivacionesAdapter.NumberViewHolder> {
 
-    final private ListItemClickListener onClickListener;
+//    final private ListItemClickListener onClickListener;
     private static int viewHolderCount;
 
     private int numberItems;
@@ -24,14 +24,14 @@ public class MotivacionesAdapter extends RecyclerView.Adapter<MotivacionesAdapte
     /**
      * The interface that receives onClick messages.
      */
-    public interface ListItemClickListener {
-        void onListItemClick(int clickedItemIndex);
-    }
+//    public interface ListItemClickListener {
+//        void onListItemClick(int clickedItemIndex);
+//    }
 
 
-    public MotivacionesAdapter(int numberItems, ListItemClickListener listener){
+    public MotivacionesAdapter(int numberItems){
         this.numberItems = numberItems;
-        onClickListener = listener;
+//        onClickListener = listener;
         viewHolderCount = 0;
     }
 
@@ -77,7 +77,7 @@ public class MotivacionesAdapter extends RecyclerView.Adapter<MotivacionesAdapte
             listItemNumberView = (TextView) itemView.findViewById(R.id.tv_item_number);
             viewHolderIndex = (TextView) itemView.findViewById(R.id.tv_view_holder_instance);
             // COMPLETED (7) Call setOnClickListener on the View passed into the constructor (use 'this' as the OnClickListener)
-            itemView.setOnClickListener(this);
+//            itemView.setOnClickListener(this);
         }
 
         /**
@@ -98,7 +98,7 @@ public class MotivacionesAdapter extends RecyclerView.Adapter<MotivacionesAdapte
         @Override
         public void onClick(View v) {
             int clickedPosition = getAdapterPosition();
-            onClickListener.onListItemClick(clickedPosition);
+//            onClickListener.onListItemClick(clickedPosition);
         }
     }
 }

@@ -111,9 +111,9 @@ public class EstrategiasFragment extends Fragment implements EstrategiasContract
     @Override
     public void onDetach() {
         super.onDetach();
+        OnFragmentInteractionListener mListener = this.mListener;
         mListener = null;
     }
-
 
     @Override
     public void showMensajesMotivacionales() {
