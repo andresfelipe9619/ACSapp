@@ -14,13 +14,14 @@
         <LinearLayout
             android:id="@+id/linearLayout5"
             android:layout_width="352dp"
-            android:layout_height="54dp"
-            android:layout_marginBottom="8dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="180dp"
             android:layout_marginEnd="4dp"
             android:layout_marginTop="24dp"
             android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="277dp">
+            app:layout_constraintTop_toBottomOf="@+id/Titulo_Actividades">
 
             <ImageView
                 android:id="@+id/imageView7"
@@ -28,12 +29,14 @@
                 android:layout_height="54dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/ic_headset_black_24dp" />
+
             <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="wrap_content"
                 android:layout_height="54dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/ic_pool_black_24dp" />
+
             <ImageView
                 android:id="@+id/imageView9"
                 android:layout_width="wrap_content"
@@ -92,16 +95,18 @@
         <TextView
             android:id="@+id/Titulo_Actividades"
             android:layout_width="169dp"
-            android:layout_height="38dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="235dp"
             android:layout_marginEnd="76dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="4dp"
             android:ems="10"
             android:text="@string/titulo_fragment_actividades"
             android:textAppearance="@style/TextAppearance.AppCompat"
-            android:textSize="16dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.763"
+            app:layout_constraintHorizontal_bias="0.923"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
