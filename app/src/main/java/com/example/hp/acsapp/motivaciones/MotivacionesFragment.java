@@ -10,13 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
 
 import com.example.hp.acsapp.R;
-import com.example.hp.acsapp.motivaciones.domain.model.Motivacion;
-
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -116,7 +111,7 @@ public class MotivacionesFragment extends Fragment implements MotivacionesContra
 
 //    MotivacionItemListener itemListener = new MotivacionItemListener() {
 //        @Override
-//        public void onMotivacionClick(Motivacion clicked) {
+//        public void onMotivacionClick(Mensajes_motivacionales clicked) {
 //            presentador.openMotivacionDetails(clicked);
 //        }
 //    };
@@ -129,22 +124,22 @@ public class MotivacionesFragment extends Fragment implements MotivacionesContra
 //
 //    private static class MotivacionAdapter extends BaseAdapter{
 //
-//        private List<Motivacion> motivaciones;
+//        private List<Mensajes_motivacionales> motivaciones;
 //        private MotivacionItemListener motivacionItemListener;
 //
-//        public MotivacionAdapter(List<Motivacion> motivaciones, MotivacionItemListener itemListener){
+//        public MotivacionAdapter(List<Mensajes_motivacionales> motivaciones, MotivacionItemListener itemListener){
 //            this.motivaciones = motivaciones;
 //            motivacionItemListener = itemListener;
 //        }
 //
 //
-//        public void replaceData(List<Motivacion> motivaciones){
+//        public void replaceData(List<Mensajes_motivacionales> motivaciones){
 //
 //            setList(motivaciones);
 //            notifyDataSetChanged();
 //        }
 //
-//        public void setList(List<Motivacion> motivaciones){ this.motivaciones = motivaciones;}
+//        public void setList(List<Mensajes_motivacionales> motivaciones){ this.motivaciones = motivaciones;}
 //
 //
 //        @Override
@@ -170,7 +165,7 @@ public class MotivacionesFragment extends Fragment implements MotivacionesContra
 //                rowView = inflater.inflate(R.layout.motivation_item, viewGroup, false);
 //            }
 //
-//            final Motivacion motivacion = (Motivacion) getItem(i);
+//            final Mensajes_motivacionales motivacion = (Mensajes_motivacionales) getItem(i);
 ////
 ////            TextView titleTV = (TextView) rowView.findViewById(R.id.title);
 ////            titleTV.setText(task.getTitleForList());
@@ -191,6 +186,6 @@ public class MotivacionesFragment extends Fragment implements MotivacionesContra
 //
 //    public interface MotivacionItemListener{
 //
-//        void onMotivacionClick(Motivacion clicked);
+//        void onMotivacionClick(Mensajes_motivacionales clicked);
 //    }
 }

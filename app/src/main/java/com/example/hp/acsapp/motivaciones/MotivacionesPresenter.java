@@ -1,10 +1,5 @@
 package com.example.hp.acsapp.motivaciones;
 
-import com.example.hp.acsapp.motivaciones.domain.model.Motivacion;
-import com.example.hp.acsapp.motivaciones.domain.usecase.GetMotivaciones;
-
-import java.util.List;
-
 /**
  * Created by HP on 1/9/2018.
  */
@@ -26,13 +21,13 @@ public class MotivacionesPresenter implements MotivacionesContract.Presenter {
 
     @Override
     public void loadMotivaciones() {
-        //List<Motivacion> motivaciones = getMotivaciones.execute();
+        //List<Mensajes_motivacionales> motivaciones = getMotivaciones.execute();
        // proccessMotivaciones(motivaciones);
        vistaMotivaciones.showMotivaciones();
     }
 
 
-//    private void proccessMotivaciones(List<Motivacion> motivaciones) {
+//    private void proccessMotivaciones(List<Mensajes_motivacionales> motivaciones) {
 //        if (motivaciones.isEmpty()) {
 //            // Show a message indicating there are no motivaciones for that filter type.
 //            processEmptyMotivaciones();

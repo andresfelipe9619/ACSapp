@@ -1,10 +1,10 @@
-package com.example.hp.acsapp.motivaciones.domain.model;
+package com.example.hp.acsapp.datasource.model;
 
 /**
  * Created by HP on 1/23/2018.
  */
 
-public final class Motivacion {
+public final class Mensajes_motivacionales {
 
     private final String id;
     private final String titulo;
@@ -12,7 +12,7 @@ public final class Motivacion {
     private final String autor;
 
 
-    public Motivacion(String id, String titulo,String descripcion, String autor){
+    public Mensajes_motivacionales(String id, String titulo, String descripcion, String autor){
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
