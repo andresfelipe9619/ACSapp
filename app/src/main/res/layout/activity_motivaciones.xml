@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.hp.acsapp.tecnicas.TecnicasActivity">
+    tools:context="com.example.hp.acsapp.motivaciones.MotivacionesActivity">
 
     <fragment
         android:id="@+id/fragment"
-        android:name="com.example.hp.acsapp.tecnicas.TecnicasFragment"
+        android:name="com.example.hp.acsapp.motivaciones.MotivacionesFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

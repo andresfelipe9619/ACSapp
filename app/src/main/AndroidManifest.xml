@@ -27,7 +27,7 @@
 
         </activity>
         <activity
-            android:name=".tecnicas.TecnicasActivity"
+            android:name=".motivaciones.MotivacionesActivity"
             android:label="@string/titulo_tecnicas"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />

@@ -12,7 +12,7 @@ public interface EstrategiasContract {
         void showMensajesMotivacionales();
         void showCentrosAtencion();
         void showTecnicasRelajacion();
-        void showEstrategias();
+
     }
     interface Presenter extends BasePresenter{
         void openMensajesMotivacionales();

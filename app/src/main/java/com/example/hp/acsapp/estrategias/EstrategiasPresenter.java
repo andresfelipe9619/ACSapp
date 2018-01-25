@@ -10,7 +10,6 @@ public class EstrategiasPresenter implements EstrategiasContract.Presenter {
 
     public EstrategiasPresenter(EstrategiasContract.View vistaEstrategias){
         this.vistaEstrategias = vistaEstrategias;
-        this.vistaEstrategias.setPresenter(this);
     }
 
     @Override
@@ -24,17 +23,13 @@ public class EstrategiasPresenter implements EstrategiasContract.Presenter {
     }
 
     @Override
+    public void start() {
+        vistaEstrategias.setPresenter(this);
+    }
+
+    @Override
     public void openTecnicasRelajacion() {
         vistaEstrategias.showTecnicasRelajacion();
     }
 
-    @Override
-    public void start() {
-        loadEstrategias();
-    }
-
-
-    private void loadEstrategias(){
-        vistaEstrategias.showEstrategias();
-    }
 }

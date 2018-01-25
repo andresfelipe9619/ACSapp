@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.example.hp.acsapp.R;
-import com.example.hp.acsapp.tecnicas.TecnicasActivity;
+import com.example.hp.acsapp.motivaciones.MotivacionesActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,7 +50,6 @@ public class EstrategiasFragment extends Fragment implements EstrategiasContract
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_estrategias, container, false);
     }
@@ -62,13 +61,10 @@ public class EstrategiasFragment extends Fragment implements EstrategiasContract
         btn_emergencia = view.findViewById(R.id.btn_centros_emergencia);
         btn_mensajes = view.findViewById(R.id.btn_mensajes_motivacionale);
         content = view.findViewById(R.id.content);
-
         btn_tecnicas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //PROBLEMA CON EL PRESENTADOR
-//                presentador.openTecnicasRelajacion();
-                showTecnicasRelajacion();
+                presentador.openTecnicasRelajacion();
             }
         });
 
@@ -90,7 +86,6 @@ public class EstrategiasFragment extends Fragment implements EstrategiasContract
     @Override
     public void onResume() {
         super.onResume();
-//        presentador.start();
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -122,6 +117,8 @@ public class EstrategiasFragment extends Fragment implements EstrategiasContract
 
     @Override
     public void showMensajesMotivacionales() {
+        Intent intent = new Intent(getContext(), MotivacionesActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -131,15 +128,10 @@ public class EstrategiasFragment extends Fragment implements EstrategiasContract
 
     @Override
     public void showTecnicasRelajacion() {
-        Intent intent = new Intent(getContext(), TecnicasActivity.class);
-        startActivity(intent);
+
 
     }
 
-    @Override
-    public void showEstrategias() {
-        content.setVisibility(View.VISIBLE);
-    }
 
     @Override
     public void setPresenter(EstrategiasContract.Presenter presenter) {

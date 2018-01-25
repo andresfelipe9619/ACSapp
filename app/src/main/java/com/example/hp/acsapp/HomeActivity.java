@@ -7,14 +7,14 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.example.hp.acsapp.actividades.ActividadesFragment;
+import com.example.hp.acsapp.actividades.ActividadesPresenter;
 import com.example.hp.acsapp.contactos.ContactoFragment;
+import com.example.hp.acsapp.contactos.ContactoPresenter;
 import com.example.hp.acsapp.estrategias.EstrategiasFragment;
 import com.example.hp.acsapp.estrategias.EstrategiasPresenter;
 
@@ -28,11 +28,14 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity implements ActividadesFragment.OnFragmentInteractionListener,
         EstrategiasFragment.OnFragmentInteractionListener, ContactoFragment.OnFragmentInteractionListener {
 
-    private EstrategiasPresenter presentadorEstrategias;
-    private TextView mTextMessage;
+
     private EstrategiasFragment estrategiasFragment;
     private ContactoFragment contactoFragment;
     private ActividadesFragment actividadesFragment;
+    private EstrategiasPresenter presentadorEstrategias;
+    private ContactoPresenter presentadorContacto;
+    private ActividadesPresenter presentadorActividades;
+
     private ViewPager viewPager;
     MenuItem prevMenuItem;
 
@@ -105,6 +108,9 @@ public class HomeActivity extends AppCompatActivity implements ActividadesFragme
         contactoFragment = new ContactoFragment();
         actividadesFragment =new ActividadesFragment();
         estrategiasFragment = new EstrategiasFragment();
+
+        presentadorEstrategias = new EstrategiasPresenter(estrategiasFragment);
+        presentadorEstrategias.start();
 
         adapter.addFragment(actividadesFragment);
         adapter.addFragment(estrategiasFragment);
