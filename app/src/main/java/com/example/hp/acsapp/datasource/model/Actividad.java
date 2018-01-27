@@ -4,7 +4,8 @@ package com.example.hp.acsapp.datasource.model;
  * Created by HP on 1/9/2018.
  */
 
-public class Actividades {
+public class Actividad {
+
     private int id;
     private String nombre;
     private String descripcion;
