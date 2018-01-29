@@ -4,7 +4,7 @@ package com.example.hp.acsapp.datasource.model;
  * Created by HP on 1/23/2018.
  */
 
-public final class Mensajes_motivacionales {
+public final class MensajeMotivacional {
 
     private final String id;
     private final String titulo;
@@ -12,7 +12,7 @@ public final class Mensajes_motivacionales {
     private final String autor;
 
 
-    public Mensajes_motivacionales(String id, String titulo, String descripcion, String autor){
+    public MensajeMotivacional(String id, String titulo, String descripcion, String autor){
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;

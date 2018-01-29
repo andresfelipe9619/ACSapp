@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.hp.acsapp.contactos.ContactosFragment">
+    tools:context="com.example.hp.acsapp.contactos.ContactoFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -33,7 +33,7 @@
             android:layout_marginTop="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/foto_amigo3"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.222"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/foto_amigo1"
             app:layout_constraintVertical_bias="0.049"
@@ -44,6 +44,7 @@
             android:layout_width="164dp"
             android:layout_height="129dp"
             android:layout_marginBottom="8dp"
+            android:layout_marginEnd="4dp"
             android:layout_marginTop="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -55,25 +56,38 @@
             android:id="@+id/name_amigo1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             android:text="TextView"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="173dp" />
+            app:layout_constraintEnd_toEndOf="@+id/foto_amigo1"
+            app:layout_constraintStart_toStartOf="@+id/foto_amigo1"
+            app:layout_constraintTop_toBottomOf="@+id/foto_amigo1" />
 
         <TextView
             android:id="@+id/name_amigo2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
             android:text="TextView"
-            tools:layout_editor_absoluteX="59dp"
-            tools:layout_editor_absoluteY="350dp" />
+            app:layout_constraintEnd_toEndOf="@+id/foto_amigo2"
+            app:layout_constraintStart_toStartOf="@+id/foto_amigo2"
+            app:layout_constraintTop_toBottomOf="@+id/foto_amigo2" />
 
         <TextView
             android:id="@+id/name_amigo3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="49dp"
+            android:layout_height="19dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
             android:text="TextView"
-            tools:layout_editor_absoluteX="274dp"
-            tools:layout_editor_absoluteY="350dp" />
+            app:layout_constraintEnd_toEndOf="@+id/foto_amigo3"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="@+id/foto_amigo3"
+            app:layout_constraintTop_toBottomOf="@+id/foto_amigo3" />
 
     </android.support.constraint.ConstraintLayout>
 </FrameLayout>

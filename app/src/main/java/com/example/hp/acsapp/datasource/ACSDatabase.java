@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.hp.acsapp.datasource.model.Actividades;
+import com.example.hp.acsapp.datasource.model.Actividad;
 
 /**
  * Created by camilojcr on 24/01/18.
@@ -97,7 +97,7 @@ public class ACSDatabase extends SQLiteOpenHelper {
 
     //Metodos de manejo de base de datos
 
-    public void insert_actividad(Actividades actividad){
+    public void insert_actividad(Actividad actividad){
         SQLiteDatabase database = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();

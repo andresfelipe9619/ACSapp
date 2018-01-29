@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.hp.acsapp.R;
+import com.example.hp.acsapp.datasource.model.CentroEmergencia;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,7 +21,7 @@ import com.example.hp.acsapp.R;
  * Use the {@link EmergenciaFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EmergenciaFragment extends Fragment {
+public class EmergenciaFragment extends Fragment implements EmergenciaContract.View{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -90,6 +93,41 @@ public class EmergenciaFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void setPresenter(EmergenciaContract.Presenter presenter) {
+
+    }
+
+    @Override
+    public void showLocalEmergencias(List<CentroEmergencia> centros) {
+
+    }
+
+    @Override
+    public void showCentroEmergenciaDetail(String centro) {
+
+    }
+
+    @Override
+    public void showCallOption() {
+
+    }
+
+    @Override
+    public void showMapsOption() {
+
+    }
+
+    @Override
+    public void showNotFoundLocalCentros() {
+
+    }
+
+    @Override
+    public void showLocalCountryCentros() {
+
     }
 
     /**

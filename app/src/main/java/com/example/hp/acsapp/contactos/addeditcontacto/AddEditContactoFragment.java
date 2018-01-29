@@ -10,17 +10,17 @@ import android.view.ViewGroup;
 
 import com.example.hp.acsapp.R;
 
-public class AddEditContactFragment extends Fragment {
+public class AddEditContactoFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public AddEditContactFragment() {
+    public AddEditContactoFragment() {
         // Required empty public constructor
     }
 
     // TODO: Rename and change types and number of parameters
-    public static AddEditContactFragment newInstance(String param1, String param2) {
-        return new AddEditContactFragment();
+    public static AddEditContactoFragment newInstance(String param1, String param2) {
+        return new AddEditContactoFragment();
     }
 
     @Override

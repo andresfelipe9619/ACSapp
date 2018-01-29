@@ -109,9 +109,19 @@ public class MotivacionesFragment extends Fragment implements MotivacionesContra
 
     }
 
+    @Override
+    public void showMotivacionDetail(String motivacionId) {
+
+    }
+
+    @Override
+    public void showMotivacionSeen(String motivacionId) {
+
+    }
+
 //    MotivacionItemListener itemListener = new MotivacionItemListener() {
 //        @Override
-//        public void onMotivacionClick(Mensajes_motivacionales clicked) {
+//        public void onMotivacionClick(MensajeMotivacional clicked) {
 //            presentador.openMotivacionDetails(clicked);
 //        }
 //    };
@@ -124,22 +134,22 @@ public class MotivacionesFragment extends Fragment implements MotivacionesContra
 //
 //    private static class MotivacionAdapter extends BaseAdapter{
 //
-//        private List<Mensajes_motivacionales> motivaciones;
+//        private List<MensajeMotivacional> motivaciones;
 //        private MotivacionItemListener motivacionItemListener;
 //
-//        public MotivacionAdapter(List<Mensajes_motivacionales> motivaciones, MotivacionItemListener itemListener){
+//        public MotivacionAdapter(List<MensajeMotivacional> motivaciones, MotivacionItemListener itemListener){
 //            this.motivaciones = motivaciones;
 //            motivacionItemListener = itemListener;
 //        }
 //
 //
-//        public void replaceData(List<Mensajes_motivacionales> motivaciones){
+//        public void replaceData(List<MensajeMotivacional> motivaciones){
 //
 //            setList(motivaciones);
 //            notifyDataSetChanged();
 //        }
 //
-//        public void setList(List<Mensajes_motivacionales> motivaciones){ this.motivaciones = motivaciones;}
+//        public void setList(List<MensajeMotivacional> motivaciones){ this.motivaciones = motivaciones;}
 //
 //
 //        @Override
@@ -165,7 +175,7 @@ public class MotivacionesFragment extends Fragment implements MotivacionesContra
 //                rowView = inflater.inflate(R.layout.motivation_item, viewGroup, false);
 //            }
 //
-//            final Mensajes_motivacionales motivacion = (Mensajes_motivacionales) getItem(i);
+//            final MensajeMotivacional motivacion = (MensajeMotivacional) getItem(i);
 ////
 ////            TextView titleTV = (TextView) rowView.findViewById(R.id.title);
 ////            titleTV.setText(task.getTitleForList());
@@ -186,6 +196,6 @@ public class MotivacionesFragment extends Fragment implements MotivacionesContra
 //
 //    public interface MotivacionItemListener{
 //
-//        void onMotivacionClick(Mensajes_motivacionales clicked);
+//        void onMotivacionClick(MensajeMotivacional clicked);
 //    }
 }

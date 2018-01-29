@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.hp.acsapp.R;
+import com.example.hp.acsapp.datasource.model.Actividad;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,7 +21,7 @@ import com.example.hp.acsapp.R;
  * Use the {@link ActividadesFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ActividadesFragment extends Fragment {
+public class ActividadesFragment extends Fragment implements ActividadesContract.View{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -90,6 +93,41 @@ public class ActividadesFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void setPresenter(ActividadesContract.Presenter presenter) {
+
+    }
+
+    @Override
+    public void showAddActividad() {
+
+    }
+
+    @Override
+    public void showActividadDetail(String actividadId) {
+
+    }
+
+    @Override
+    public void showBaseActividades(List<Actividad> actividades) {
+
+    }
+
+    @Override
+    public void showUserActividades(List<Actividad> actividads) {
+
+    }
+
+    @Override
+    public void showNoUserActividades() {
+
+    }
+
+    @Override
+    public void showActividadMarkedComplete() {
+
     }
 
     /**

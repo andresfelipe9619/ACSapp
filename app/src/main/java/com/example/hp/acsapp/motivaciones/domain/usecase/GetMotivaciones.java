@@ -9,7 +9,7 @@ import com.example.hp.acsapp.datasource.MotivacionRepository;
 public class GetMotivaciones {
 
     private final MotivacionRepository repositorioMotivacion;
-    //private final Mensajes_motivacionales motivaciones;
+    //private final MensajeMotivacional motivaciones;
 
     public GetMotivaciones(MotivacionRepository repositorio){
         repositorioMotivacion = repositorio;
