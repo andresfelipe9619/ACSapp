@@ -2,6 +2,7 @@ package com.example.hp.acsapp.datasource;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -132,6 +133,10 @@ public class ACSDatabase extends SQLiteOpenHelper {
             + COLUMNA_FK_TECNICAS + " INTEGER NOT NULL"
             + COLUMNA_FK_USER + " INTEGER NOT NULL);";
 
+    //define tabla mensajes_error
+
+    private static final String SQL_CREATE_MENSAJES_ERROR = "CREATE TABLE mensaje_error(id INTEGER primary key, mensaje TEXT)";
+
     //Constructor
     public ACSDatabase(Context context){
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
@@ -149,6 +154,13 @@ public class ACSDatabase extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(SQL_CREATE_CONTACTOS);
         sqLiteDatabase.execSQL(SQL_CREATE_VER_MENSAJES);
         sqLiteDatabase.execSQL(SQL_CREATE_VER_TECNICAS);
+        sqLiteDatabase.execSQL(SQL_CREATE_MENSAJES_ERROR);
+
+        ContentValues values = new ContentValues();
+
+        values.put("id", 0);
+        values.put("mensaje", "No se encuentran registros");
+
 
     }
 
@@ -168,5 +180,21 @@ public class ACSDatabase extends SQLiteOpenHelper {
         database.close();
         return (int) newRowId;
     }
+
+    public Cursor get_records(String query, String[] args){
+
+        SQLiteDatabase database = this.getReadableDatabase();
+        Cursor retorno = database.rawQuery(query,args);
+
+        if(retorno != null){
+            database.close();
+            return retorno;
+        }else{
+            retorno = database.rawQuery("SELECT mensaje FROM mensaje_error WHERE id = 0", null);
+            database.close();
+            return retorno;
+        }
+    }
+
 
 }

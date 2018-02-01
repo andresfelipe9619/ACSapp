@@ -5,6 +5,8 @@ import android.content.Context;
 
 import com.example.hp.acsapp.datasource.ACSDatabase;
 
+import java.util.ArrayList;
+
 import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_AUTOR;
 import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_DESCRIPCION;
 import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_NOMBRE;
@@ -78,4 +80,12 @@ public final class MensajeMotivacional {
         return newRowId;
 
     }
+
+/*    public ArrayList<MensajeMotivacional> listar_mensajes(Context context){
+
+        ACSDatabase db = new ACSDatabase(context);
+
+        String query = "SELECT * FROM mensaje_motivacional";
+        db.get_records();
+    };*/
 }
