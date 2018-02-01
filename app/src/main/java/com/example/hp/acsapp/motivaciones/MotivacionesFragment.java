@@ -12,6 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.hp.acsapp.R;
+import com.example.hp.acsapp.datasource.model.MensajeMotivacional;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,21 +25,21 @@ import com.example.hp.acsapp.R;
  * Use the {@link MotivacionesFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MotivacionesFragment extends Fragment implements MotivacionesContract.View
+public class MotivacionesFragment extends Fragment
+        implements MotivacionesContract.View, MotivacionesAdapter.MotivacionItemListener
 {
-
-   private OnFragmentInteractionListener mListener;
+    private static final int NUM_LIST_ITEMS = 100;
+    private OnFragmentInteractionListener mListener;
     private MotivacionesContract.Presenter presentador;
     private MotivacionesAdapter adapter;
     private RecyclerView numberList;
-   // private MotivacionAdapter listAdapter;
-   private static final int NUM_LIST_ITEMS = 100;
+    private List<MensajeMotivacional> misMensajes;
 
 
     public MotivacionesFragment() {
         // Required empty public constructor
-    }
 
+    }
 
     public static MotivacionesFragment newInstance() {
     return new MotivacionesFragment();
@@ -44,21 +48,26 @@ public class MotivacionesFragment extends Fragment implements MotivacionesContra
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        adapter = new MotivacionesAdapter(NUM_LIST_ITEMS);
+        misMensajes = new ArrayList<>();
+        misMensajes.add(new MensajeMotivacional("1","Animate!","No te mates way","antisuicidio"));
+        misMensajes.add(new MensajeMotivacional("2","Animate!","No te mates way","antisuicidio"));
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_motivaciones, container, false);
         numberList = (RecyclerView) root.findViewById(R.id.rv_numbers);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        adapter = new MotivacionesAdapter(misMensajes, this);
 
         numberList.setHasFixedSize(true);
-
         numberList.setLayoutManager(layoutManager);
         numberList.setAdapter(adapter);
+
         return root;
     }
 
@@ -99,11 +108,6 @@ public class MotivacionesFragment extends Fragment implements MotivacionesContra
     }
 
 
-//    @Override
-//    public void onListItemClick(int clickedItemIndex) {
-//
-//    }
-
     @Override
     public void showMotivaciones() {
 
@@ -119,83 +123,18 @@ public class MotivacionesFragment extends Fragment implements MotivacionesContra
 
     }
 
-//    MotivacionItemListener itemListener = new MotivacionItemListener() {
-//        @Override
-//        public void onMotivacionClick(MensajeMotivacional clicked) {
-//            presentador.openMotivacionDetails(clicked);
-//        }
-//    };
+
+    @Override
+    public void onListItemClick(MensajeMotivacional clickedItem) {
+        // presentador.openMotivacionDetails(clickedItem);
+
+    }
+
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 
-//
-//    private static class MotivacionAdapter extends BaseAdapter{
-//
-//        private List<MensajeMotivacional> motivaciones;
-//        private MotivacionItemListener motivacionItemListener;
-//
-//        public MotivacionAdapter(List<MensajeMotivacional> motivaciones, MotivacionItemListener itemListener){
-//            this.motivaciones = motivaciones;
-//            motivacionItemListener = itemListener;
-//        }
-//
-//
-//        public void replaceData(List<MensajeMotivacional> motivaciones){
-//
-//            setList(motivaciones);
-//            notifyDataSetChanged();
-//        }
-//
-//        public void setList(List<MensajeMotivacional> motivaciones){ this.motivaciones = motivaciones;}
-//
-//
-//        @Override
-//        public int getCount() {
-//            return motivaciones.size();
-//        }
-//
-//        @Override
-//        public Object getItem(int i) {
-//            return motivaciones.get(i);
-//        }
-//
-//        @Override
-//        public long getItemId(int i) {
-//            return i;
-//        }
-//
-//        @Override
-//        public View getView(int i, View view, ViewGroup viewGroup) {
-//            View rowView = view;
-//            if (rowView == null) {
-//                LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-//                rowView = inflater.inflate(R.layout.motivation_item, viewGroup, false);
-//            }
-//
-//            final MensajeMotivacional motivacion = (MensajeMotivacional) getItem(i);
-////
-////            TextView titleTV = (TextView) rowView.findViewById(R.id.title);
-////            titleTV.setText(task.getTitleForList());
-//            rowView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    motivacionItemListener.onMotivacionClick(motivacion);
-//                }
-//            });
-//
-//            return rowView;
-//        }
-//
-//
-//    }
-//
-//
-//
-//    public interface MotivacionItemListener{
-//
-//        void onMotivacionClick(MensajeMotivacional clicked);
-//    }
+
 }
