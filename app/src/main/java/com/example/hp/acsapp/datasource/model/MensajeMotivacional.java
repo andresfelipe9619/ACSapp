@@ -2,16 +2,17 @@ package com.example.hp.acsapp.datasource.model;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.util.Log;
 
-import com.example.hp.acsapp.datasource.ACSDatabase;
+import com.example.hp.acsapp.datasource.sqlite.ACSDatabase;
 
 import java.util.ArrayList;
 
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_AUTOR;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_DESCRIPCION;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_NOMBRE;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_TITULO;
-import static com.example.hp.acsapp.datasource.ACSDatabase.TABLA_MENSAJES;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_AUTOR;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_DESCRIPCION;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_TITULO;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.TABLA_MENSAJES;
 
 /**
  * Created by HP on 1/23/2018.
@@ -19,20 +20,27 @@ import static com.example.hp.acsapp.datasource.ACSDatabase.TABLA_MENSAJES;
 
 public final class MensajeMotivacional {
 
-    private final String id;
-    private final String titulo;
-    private final String descripcion;
-    private final String autor;
+    private int id;
+    private  String titulo;
+    private  String descripcion;
+    private String autor;
 
-
-    public MensajeMotivacional(String id, String titulo, String descripcion, String autor){
+    public MensajeMotivacional(int id, String titulo, String descripcion, String autor){
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.autor = autor;
     }
 
-    public String getId() {
+    public MensajeMotivacional(String titulo, String descripcion, String autor) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.autor = autor;
+    }
+
+
+
+    public int getId() {
         return id;
     }
 
@@ -48,44 +56,19 @@ public final class MensajeMotivacional {
         return autor;
     }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
+    public void setId(int id) {
+        this.id = id;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public int insert(Context context){
-
-        int newRowId;
-
-        ACSDatabase db = new ACSDatabase(context);
-
-        ContentValues values = new ContentValues();
-//      llenar valores
-
-        values.put(COLUMNA_TITULO, this.getTitulo());
-        values.put(COLUMNA_DESCRIPCION, this.getDescripcion());
-        values.put(COLUMNA_AUTOR, this.getAutor());
-
-        newRowId = db.insert_record(TABLA_MENSAJES, values);
-        return newRowId;
-
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
-
-/*    public ArrayList<MensajeMotivacional> listar_mensajes(Context context){
-
-        ACSDatabase db = new ACSDatabase(context);
-
-        String query = "SELECT * FROM mensaje_motivacional";
-        db.get_records();
-    };*/
 }

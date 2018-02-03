@@ -3,15 +3,15 @@ package com.example.hp.acsapp.datasource.model;
 import android.content.ContentValues;
 import android.content.Context;
 
-import com.example.hp.acsapp.datasource.ACSDatabase;
+import com.example.hp.acsapp.datasource.sqlite.ACSDatabase;
 
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_FECHA;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_FK_ACTIVIDAD;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_FK_USER;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_HORA;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_ID;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_LUGAR;
-import static com.example.hp.acsapp.datasource.ACSDatabase.TABLA_AGENDA_ACTIVIDADES;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_FECHA;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_FK_ACTIVIDAD;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_FK_USER;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_HORA;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_ID;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_LUGAR;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.TABLA_AGENDA_ACTIVIDADES;
 
 /**
  * Created by camilojcr on 25/01/18.

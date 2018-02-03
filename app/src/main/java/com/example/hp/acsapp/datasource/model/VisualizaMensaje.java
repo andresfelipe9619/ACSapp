@@ -3,12 +3,12 @@ package com.example.hp.acsapp.datasource.model;
 import android.content.ContentValues;
 import android.content.Context;
 
-import com.example.hp.acsapp.datasource.ACSDatabase;
+import com.example.hp.acsapp.datasource.sqlite.ACSDatabase;
 
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_FK_MENSAJES;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_FK_USER;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_NOMBRE;
-import static com.example.hp.acsapp.datasource.ACSDatabase.TABLA_VER_MENSAJES;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_FK_MENSAJES;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_FK_USER;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_NOMBRE;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.TABLA_VER_MENSAJES;
 
 /**
  * Created by camilojcr on 25/01/18.

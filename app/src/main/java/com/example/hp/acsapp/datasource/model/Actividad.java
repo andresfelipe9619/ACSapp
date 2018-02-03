@@ -3,13 +3,12 @@ package com.example.hp.acsapp.datasource.model;
 import android.content.ContentValues;
 import android.content.Context;
 
-import com.example.hp.acsapp.datasource.ACSDatabase;
+import com.example.hp.acsapp.datasource.sqlite.ACSDatabase;
 
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_DESCRIPCION;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_ID;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_NOMBRE;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_URL;
-import static com.example.hp.acsapp.datasource.ACSDatabase.TABLA_ACTIVIDADES;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_DESCRIPCION;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_NOMBRE;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_URL;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.TABLA_ACTIVIDADES;
 
 /**
  * Created by HP on 1/9/2018.
@@ -67,9 +66,9 @@ public class Actividad {
         this.icon_url = icon_url;
     }
 
-    public int insert(Context context){
+    public boolean insert(Context context){
 
-        int newRowId;
+        boolean newRowId;
 
         ACSDatabase db = new ACSDatabase(context);
 

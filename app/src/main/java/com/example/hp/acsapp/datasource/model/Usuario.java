@@ -3,11 +3,11 @@ package com.example.hp.acsapp.datasource.model;
 import android.content.ContentValues;
 import android.content.Context;
 
-import com.example.hp.acsapp.datasource.ACSDatabase;
+import com.example.hp.acsapp.datasource.sqlite.ACSDatabase;
 
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_FK_CIUDAD;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_NOMBRE;
-import static com.example.hp.acsapp.datasource.ACSDatabase.TABLA_USUARIO;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_FK_CIUDAD;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_NOMBRE;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.TABLA_USUARIO;
 
 /**
  * Created by camilojcr on 25/01/18.

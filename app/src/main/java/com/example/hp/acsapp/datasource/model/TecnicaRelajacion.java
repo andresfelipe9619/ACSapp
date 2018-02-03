@@ -3,13 +3,13 @@ package com.example.hp.acsapp.datasource.model;
 import android.content.ContentValues;
 import android.content.Context;
 
-import com.example.hp.acsapp.datasource.ACSDatabase;
+import com.example.hp.acsapp.datasource.sqlite.ACSDatabase;
 
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_AUTOR;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_DESCRIPCION;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_NOMBRE;
-import static com.example.hp.acsapp.datasource.ACSDatabase.COLUMNA_URL_RECURSO;
-import static com.example.hp.acsapp.datasource.ACSDatabase.TABLA_TECNICAS_RELAJACION;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_AUTOR;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_DESCRIPCION;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_NOMBRE;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_URL_RECURSO;
+import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.TABLA_TECNICAS_RELAJACION;
 
 /**
  * Created by camilojcr on 25/01/18.
