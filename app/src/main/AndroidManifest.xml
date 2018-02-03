@@ -48,6 +48,7 @@
             android:name=".contactos.contactodetail.ContactoDetailActivity"
             android:label="@string/title_activity_contacto_detail"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".motivaciones.motivaciondetails.MotivacionDetailActivity"></activity>
     </application>
 
 </manifest>
