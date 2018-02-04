@@ -2,12 +2,8 @@ package com.example.hp.acsapp.datasource.model;
 
 import android.content.ContentValues;
 import android.content.Context;
-
 import com.example.hp.acsapp.datasource.sqlite.ACSDatabase;
-
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_DIRECCION;
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_NOMBRE;
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_TELEFONO;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.*;
 
 /**
  * Created by camilojcr on 25/01/18.
@@ -65,9 +61,9 @@ public class CentroEmergencia {
         this.direccion = direccion;
     }
 
-    public int insert(Context context){
+    public boolean insert(Context context){
 
-        int newRowId;
+        boolean newRowId;
 
         ACSDatabase db = new ACSDatabase(context);
 
@@ -78,7 +74,7 @@ public class CentroEmergencia {
         values.put(COLUMNA_TELEFONO, this.getTelefono());
         values.put(COLUMNA_DIRECCION, this.getDireccion());
 
-        newRowId = db.insert_record(ACSDatabase.TABLA_CENTROS_EMERGENCIA, values);
+        newRowId = db.insert_record(TABLA_CENTROS_EMERGENCIA, values);
         return newRowId;
 
     }

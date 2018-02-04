@@ -5,9 +5,15 @@ package com.example.hp.acsapp.actividades;
  */
 
 public class ActividadesPresenter implements ActividadesContract.Presenter{
+
+    private final ActividadesContract.View vistaActividades;
+
+    public ActividadesPresenter(ActividadesContract.View view){
+        vistaActividades = view;
+    }
     @Override
     public void start() {
-
+        vistaActividades.setPresenter(this);
     }
 
     @Override
@@ -22,7 +28,7 @@ public class ActividadesPresenter implements ActividadesContract.Presenter{
 
     @Override
     public void loadBaseActividades() {
-
+        //    vistaActividades.showBaseActividades();
     }
 
     @Override

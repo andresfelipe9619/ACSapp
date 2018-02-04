@@ -5,8 +5,7 @@ import android.content.Context;
 
 import com.example.hp.acsapp.datasource.sqlite.ACSDatabase;
 
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_NOMBRE;
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.TABLA_CIUDAD;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.*;
 
 /**
  * Created by camilojcr on 25/01/18.
@@ -42,9 +41,9 @@ public class Ciudad {
         this.nombre = nombre;
     }
 
-    public int insert(Context context){
+    public boolean insert(Context context){
 
-        int newRowId;
+        boolean newRowId;
 
         ACSDatabase db = new ACSDatabase(context);
 

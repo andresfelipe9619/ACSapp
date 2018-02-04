@@ -7,12 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.example.hp.acsapp.R;
-import com.example.hp.acsapp.motivaciones.domain.usecase.GetMotivaciones;
 
 public class MotivacionesActivity extends AppCompatActivity implements MotivacionesFragment.OnFragmentInteractionListener {
 
     private MotivacionesPresenter presentadorMotivaciones;
-    private GetMotivaciones tomaMotivaciones;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

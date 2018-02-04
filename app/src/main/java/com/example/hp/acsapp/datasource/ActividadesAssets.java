@@ -1,5 +1,7 @@
 package com.example.hp.acsapp.datasource;
 
+import android.content.res.Resources;
+
 import com.example.hp.acsapp.R;
 
 import java.util.ArrayList;
@@ -11,19 +13,12 @@ import java.util.List;
 
 public class ActividadesAssets {
 
-    public List<Integer> defaultActividades = new ArrayList<Integer>(){{
-
-        add(1);
-        add(1);
-        add(1);
-        add(1);
-        add(1);
-        add(1);
-        add(1);
-
+    private static  List<Integer> defaultActividades = new ArrayList<Integer>(){{
+        add(R.drawable.corre_ico);
+        add(R.drawable.cocina_ico);
     }};
 
-    public List<Integer> getDefaultActividades(){
+    public static List<Integer> getDefaultActividades(){
         return defaultActividades;
     }
 

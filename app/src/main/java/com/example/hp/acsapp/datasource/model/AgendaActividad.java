@@ -5,13 +5,7 @@ import android.content.Context;
 
 import com.example.hp.acsapp.datasource.sqlite.ACSDatabase;
 
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_FECHA;
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_FK_ACTIVIDAD;
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_FK_USER;
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_HORA;
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_ID;
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_LUGAR;
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.TABLA_AGENDA_ACTIVIDADES;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.*;
 
 /**
  * Created by camilojcr on 25/01/18.
@@ -81,9 +75,9 @@ public class AgendaActividad {
         this.fecha = fecha;
     }
 
-    public int insert(Context context){
+    public boolean insert(Context context){
 
-        int newRowId;
+        boolean newRowId;
 
         ACSDatabase db = new ACSDatabase(context);
 

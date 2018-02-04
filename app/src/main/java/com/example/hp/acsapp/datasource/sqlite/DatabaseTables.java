@@ -15,7 +15,7 @@ public class DatabaseTables {
 
     public static final String SQL_CREATE_ACTIVIDADES = "CREATE TABLE "
             + TABLA_ACTIVIDADES + "("
-            + COLUMNA_ID + "INTEGER primary key autoincrement, "
+            + COLUMNA_ID + " INTEGER primary key autoincrement, "
             + COLUMNA_NOMBRE + "TEXT NOT NULL, "
             + COLUMNA_DESCRIPCION + "TEXT NOT NULL,"
             + COLUMNA_URL +"TEXT);";
@@ -26,7 +26,7 @@ public class DatabaseTables {
 
     public static final String SQL_CREATE_USUARIO = "CREATE TABLE "
             + TABLA_USUARIO + "("
-            + COLUMNA_ID + "INTEGER primary key autoincrement, "
+            + COLUMNA_ID + " INTEGER primary key autoincrement, "
             + COLUMNA_FK_CIUDAD + "INTEGER NOT NULL, "
             + COLUMNA_NOMBRE + "TEXT NOT NULL); ";
 
@@ -40,7 +40,7 @@ public class DatabaseTables {
 
     public static final String SQL_CREATE_AGENDA = "CREATE TABLE "
             + TABLA_AGENDA_ACTIVIDADES + "("
-            + COLUMNA_ID + "INTEGER primary key autoincrement, "
+            + COLUMNA_ID + " INTEGER primary key autoincrement, "
             + COLUMNA_FK_USER + "INTEGER NOT NULL, "
             + COLUMNA_FK_ACTIVIDAD + "INTEGER NOT NULL, "
             + COLUMNA_HORA + "TEXT NOT NULL, "
@@ -96,7 +96,7 @@ public class DatabaseTables {
 
     public static final String SQL_CREATE_MENSAJES = "CREATE TABLE "
             + TABLA_MENSAJES +  "("
-            + COLUMNA_ID + "INTEGER primary key autoincrement, "
+            + COLUMNA_ID + " INTEGER primary key autoincrement, "
             + COLUMNA_TITULO + " TEXT NOT NULL, "
             + COLUMNA_AUTOR + " TEXT NOT NULL, "
             + COLUMNA_DESCRIPCION + " TEXT NOT NULL);";

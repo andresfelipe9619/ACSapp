@@ -49,8 +49,8 @@ public class MotivacionesFragment extends Fragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         misMensajes = new ArrayList<>();
-        misMensajes.add(new MensajeMotivacional("1","Animate!","No te mates way","antisuicidio"));
-        misMensajes.add(new MensajeMotivacional("2","Animate!","No te mates way","antisuicidio"));
+        misMensajes.add(new MensajeMotivacional(1,"Animate!","No te mates way","antisuicidio"));
+        misMensajes.add(new MensajeMotivacional(2,"Animate!","No te mates way","antisuicidio"));
 
     }
 

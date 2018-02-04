@@ -3,6 +3,10 @@ package com.example.hp.acsapp.datasource.sqlite;
 import android.content.ContentValues;
 import android.content.Context;
 
+import com.example.hp.acsapp.datasource.ActividadesAssets;
+
+import java.util.List;
+
 import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.*;
 
 /**
@@ -13,9 +17,11 @@ public class StartData {
 
     Context context;
     ACSDatabase db;
+    List<Integer> assets;
 
     public StartData(Context context) {
         this.context = context;
+        assets = ActividadesAssets.getDefaultActividades();
         this.db = new ACSDatabase(context);
         InsertMensajesError();
         InsertMensajes();
@@ -32,13 +38,22 @@ public class StartData {
 
     private void InsertActividades(){
 
+        ContentValues Actividad_0 = new ContentValues();
+
+        Actividad_0.put(COLUMNA_NOMBRE, "Cocinar");
+        Actividad_0.put(COLUMNA_DESCRIPCION, "");
+        Actividad_0.put(COLUMNA_URL, String.valueOf(assets.get(0)));
+
+        db.insert_record(TABLA_ACTIVIDADES,Actividad_0);
+
         ContentValues Actividad_1 = new ContentValues();
 
         Actividad_1.put(COLUMNA_NOMBRE, "Cocinar");
         Actividad_1.put(COLUMNA_DESCRIPCION, "");
-        Actividad_1.put(COLUMNA_URL, "");
+        Actividad_1.put(COLUMNA_URL, String.valueOf(assets.get(1)));
 
         db.insert_record(TABLA_ACTIVIDADES,Actividad_1);
+
     }
 
     private void InsertMensajes(){
