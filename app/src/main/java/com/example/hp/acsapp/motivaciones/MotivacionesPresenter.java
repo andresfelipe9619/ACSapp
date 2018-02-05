@@ -1,6 +1,11 @@
 package com.example.hp.acsapp.motivaciones;
 
+import android.content.Context;
+
 import com.example.hp.acsapp.datasource.model.MensajeMotivacional;
+import com.example.hp.acsapp.datasource.sqlite.controllers.MensajesController;
+
+import java.util.List;
 
 /**
  * Created by HP on 1/9/2018.
@@ -9,23 +14,31 @@ import com.example.hp.acsapp.datasource.model.MensajeMotivacional;
 public class MotivacionesPresenter implements MotivacionesContract.Presenter {
 
     private final MotivacionesContract.View vistaMotivaciones;
-//    private final GetMotivaciones getMotivaciones;
+    private final MensajesController mMensajesController;
 
-    public MotivacionesPresenter(MotivacionesContract.View view) {
+    public MotivacionesPresenter(Context context, MotivacionesContract.View view) {
         vistaMotivaciones = view;
-//        this.getMotivaciones = getMotivaciones;
-    }
-
-    @Override
-    public void start() {
+        mMensajesController  = new MensajesController(context);
         vistaMotivaciones.setPresenter(this);
     }
 
     @Override
+    public void start() {
+        loadMotivaciones();
+    }
+
+    @Override
     public void loadMotivaciones() {
-        //List<MensajeMotivacional> motivaciones = getMotivaciones.execute();
-       // proccessMotivaciones(motivaciones);
-       vistaMotivaciones.showMotivaciones();
+       //vistaMotivaciones.showMotivaciones();
+        // SE DEBE IMPLEMENTAR CALLBACK PARA EL ACCESO A LOS DATOS
+        //ON DATA LOADED Y ON DATA NOT AVAILABLE
+        try{
+            List<MensajeMotivacional> mensajesListos =  mMensajesController.getMensajes();
+            proccessMotivaciones(mensajesListos);
+        }catch (Exception e){
+            //vistaMotivacion.showLoadingError();
+        }
+
     }
 
     @Override
@@ -38,20 +51,12 @@ public class MotivacionesPresenter implements MotivacionesContract.Presenter {
 
     }
 
-
-//    private void proccessMotivaciones(List<MensajeMotivacional> motivaciones) {
-//        if (motivaciones.isEmpty()) {
-//            // Show a message indicating there are no motivaciones for that filter type.
-//            processEmptyMotivaciones();
-//        } else {
-//            // Show the list of motivaciones
-//            vistaMotivaciones.showMotivaciones(motivaciones);
-//        }
-//
-//    }
-
-    private void processEmptyMotivaciones() {
-
-
+    private void proccessMotivaciones(List<MensajeMotivacional> mensajes){
+        if(mensajes.isEmpty()){
+            vistaMotivaciones.showNoMotivaciones();
+        }else{
+            vistaMotivaciones.showMotivaciones(mensajes);
+        }
     }
+
 }

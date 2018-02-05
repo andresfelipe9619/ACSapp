@@ -7,115 +7,44 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/linearLayout5"
-            android:layout_width="352dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="180dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginTop="24dp"
-            android:orientation="horizontal"
+        <FrameLayout
+            android:id="@+id/UserActividades"
+            android:layout_width="0dp"
+            android:layout_height="240dp"
+            android:layout_marginBottom="38dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Titulo_Actividades">
-
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="wrap_content"
-                android:layout_height="54dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_headset_black_24dp" />
-
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="wrap_content"
-                android:layout_height="54dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_pool_black_24dp" />
-
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="wrap_content"
-                android:layout_height="54dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_local_airport_black_24dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="352dp"
-            android:layout_height="54dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginTop="24dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3">
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="54dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_pool_black_24dp" />
-
-            <ImageView
-                android:id="@+id/foto_amigo3"
-                android:layout_width="15dp"
-                android:layout_height="54dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_directions_bike_black" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="54dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_brightness_7_black" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/actividades_intro"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Titulo_Actividades" />
-
-        <TextView
-            android:id="@+id/Titulo_Actividades"
-            android:layout_width="169dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="235dp"
-            android:layout_marginEnd="76dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
-            android:ems="10"
-            android:text="@string/titulo_fragment_actividades"
-            android:textAppearance="@style/TextAppearance.AppCompat"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.923"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/defaultActividades">
 
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="20dp" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_userActividades"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
 
+        <FrameLayout
+            android:id="@+id/defaultActividades"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="72dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="57dp"
+            app:layout_constraintBottom_toTopOf="@+id/UserActividades"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_defaultActividades"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
     </android.support.constraint.ConstraintLayout>
 </FrameLayout>

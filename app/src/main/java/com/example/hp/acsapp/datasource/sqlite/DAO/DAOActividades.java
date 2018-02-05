@@ -1,5 +1,6 @@
 package com.example.hp.acsapp.datasource.sqlite.DAO;
 
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -94,4 +95,5 @@ public class DAOActividades {
     public boolean delete(int id){
         return db.delete_record(TABLA_ACTIVIDADES, id);
     }
+
 }

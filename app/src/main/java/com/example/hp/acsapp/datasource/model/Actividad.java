@@ -5,10 +5,7 @@ import android.content.Context;
 
 import com.example.hp.acsapp.datasource.sqlite.ACSDatabase;
 
-import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_DESCRIPCION;
-import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_NOMBRE;
-import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_URL;
-import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.TABLA_ACTIVIDADES;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.*;
 
 /**
  * Created by HP on 1/9/2018.

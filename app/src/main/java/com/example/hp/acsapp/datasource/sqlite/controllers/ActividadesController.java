@@ -5,10 +5,13 @@ import android.content.Context;
 
 import com.example.hp.acsapp.datasource.model.Actividad;
 import com.example.hp.acsapp.datasource.sqlite.DAO.DAOActividades;
-import com.example.hp.acsapp.datasource.sqlite.DAO.DAOMensajes;
 
 import java.util.ArrayList;
 
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_DESCRIPCION;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_NOMBRE;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_URL;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.TABLA_ACTIVIDADES;
 import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_DESCRIPCION;
 import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_NOMBRE;
 import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_URL;
@@ -36,6 +39,7 @@ public class ActividadesController {
     public ArrayList<Actividad> listar_actividades(){
         return daoActividades.listar_actividades();
     }
+
 
 
 

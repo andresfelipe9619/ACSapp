@@ -5,4 +5,9 @@ package com.example.hp.acsapp.datasource.sqlite.controllers;
  */
 
 public class AgendaActividadController {
+
+    private ACSDatabase db;
+    Context context;
+    private static final String TAG = AgendaActividadController.class.getSimpleName();
+
 }

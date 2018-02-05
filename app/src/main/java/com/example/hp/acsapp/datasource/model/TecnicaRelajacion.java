@@ -5,11 +5,7 @@ import android.content.Context;
 
 import com.example.hp.acsapp.datasource.sqlite.ACSDatabase;
 
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_AUTOR;
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_DESCRIPCION;
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_NOMBRE;
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.COLUMNA_URL_RECURSO;
-import static com.example.hp.acsapp.datasource.sqlite.ACSDatabase.TABLA_TECNICAS_RELAJACION;
+import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.*;
 
 /**
  * Created by camilojcr on 25/01/18.
@@ -78,9 +74,9 @@ public class TecnicaRelajacion {
         this.descripcion = descripcion;
     }
 
-    public int insert(Context context){
+    public boolean insert(Context context){
 
-        int newRowId;
+        boolean newRowId;
 
         ACSDatabase db = new ACSDatabase(context);
 

@@ -15,6 +15,7 @@ import com.example.hp.acsapp.actividades.ActividadesFragment;
 import com.example.hp.acsapp.actividades.ActividadesPresenter;
 import com.example.hp.acsapp.contactos.ContactoFragment;
 import com.example.hp.acsapp.contactos.ContactoPresenter;
+import com.example.hp.acsapp.datasource.sqlite.StartData;
 import com.example.hp.acsapp.estrategias.EstrategiasFragment;
 import com.example.hp.acsapp.estrategias.EstrategiasPresenter;
 
@@ -28,14 +29,12 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity implements ActividadesFragment.OnFragmentInteractionListener,
         EstrategiasFragment.OnFragmentInteractionListener, ContactoFragment.OnFragmentInteractionListener {
 
-
     private EstrategiasFragment estrategiasFragment;
     private ContactoFragment contactoFragment;
     private ActividadesFragment actividadesFragment;
     private EstrategiasPresenter presentadorEstrategias;
     private ContactoPresenter presentadorContacto;
     private ActividadesPresenter presentadorActividades;
-
     private ViewPager viewPager;
     MenuItem prevMenuItem;
 
@@ -64,9 +63,9 @@ public class HomeActivity extends AppCompatActivity implements ActividadesFragme
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        //StartData data = new StartData(this);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
-
         final BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -87,16 +86,13 @@ public class HomeActivity extends AppCompatActivity implements ActividadesFragme
                 }
                 navigation.getMenu().getItem(position).setChecked(true);
                 prevMenuItem = navigation.getMenu().getItem(position);
-
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
             }
         });
         setupViewPager(viewPager);
-
     }
 
     @Override
