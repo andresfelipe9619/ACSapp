@@ -41,7 +41,7 @@ public class ACSDatabase extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(SQL_CREATE_MENSAJES_ERROR);
         sqLiteDatabase.execSQL(SQL_CREATE_ACTIVIDADES);
 //
-        StartData data = new StartData();
+        StartData data = new StartData(context);
     }
 
     @Override
@@ -84,7 +84,7 @@ public class ACSDatabase extends SQLiteOpenHelper {
 
         SQLiteDatabase database = this.getReadableDatabase();
 
-        int i = database.update(tabla, values, " _id = ?", new String[]{String.valueOf(values.get("id"))});
+        int i = database.update(tabla, values, COLUMNA_ID + " = ?", new String[]{String.valueOf(values.get(COLUMNA_ID))});
 
         database.close();
 
