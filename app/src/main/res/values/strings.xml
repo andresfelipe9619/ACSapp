@@ -15,4 +15,5 @@
     <string name="titulo_fragment_actividades">Actividades Saludables</string>
     <string name="title_activity_add_edit_contacto">AddEditContactoActivity</string>
     <string name="title_activity_contacto_detail">ContactoDetailActivity</string>
+    <string name="title_activity_tecincas">TecincasActivity</string>
 </resources>

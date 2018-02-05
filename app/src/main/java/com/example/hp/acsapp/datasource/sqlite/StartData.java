@@ -3,7 +3,7 @@ package com.example.hp.acsapp.datasource.sqlite;
 import android.content.ContentValues;
 import android.content.Context;
 
-import com.example.hp.acsapp.datasource.ActividadesAssets;
+import com.example.hp.acsapp.utils.ActividadesAssets;
 
 import java.util.List;
 

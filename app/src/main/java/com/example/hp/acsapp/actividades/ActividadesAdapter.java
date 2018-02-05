@@ -53,13 +53,13 @@ public class ActividadesAdapter extends RecyclerView.Adapter<ActividadesAdapter.
 
     public class ActividadViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         ImageView mImage;
-        public ActividadViewHolder(View itemView) {
+        private ActividadViewHolder(View itemView) {
             super(itemView);
             mImage = itemView.findViewById(R.id.imageActividadItem);
-            mImage.getLayoutParams().width = 320;
-            mImage.getLayoutParams().height = 320;
-
-            itemView.setOnClickListener(this);
+            mImage.setAdjustViewBounds(true);
+            mImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            mImage.setPadding(8, 8, 8, 8);
+            mImage.setOnClickListener(this);
         }
 
         @Override

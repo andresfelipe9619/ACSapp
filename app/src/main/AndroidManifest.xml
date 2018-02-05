@@ -17,6 +17,8 @@
         android:roundIcon="@mipmap/logo_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <service android:name=".utils.MediaPlayerService" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -48,7 +50,11 @@
             android:name=".contactos.contactodetail.ContactoDetailActivity"
             android:label="@string/title_activity_contacto_detail"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".motivaciones.motivaciondetails.MotivacionDetailActivity"></activity>
+        <activity android:name=".motivaciones.motivaciondetails.MotivacionDetailActivity" />
+        <activity
+            android:name=".tecnicas.TecincasActivity"
+            android:label="@string/title_activity_tecincas"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

@@ -5,14 +5,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.hp.acsapp.R;
-import com.example.hp.acsapp.datasource.ActividadesAssets;
+import com.example.hp.acsapp.utils.ActividadesAssets;
 import com.example.hp.acsapp.datasource.model.Actividad;
 
 import java.util.ArrayList;
@@ -45,6 +44,11 @@ public class ActividadesFragment extends Fragment implements ActividadesContract
         actividades = new ArrayList<>();
         actividades.add(new Actividad( "Cocinar", "La mejor cociqna", String.valueOf(urls.get(0))));
         actividades.add(new Actividad( "Bailar", "El mejor baile", String.valueOf(urls.get(1))));
+        actividades.add(new Actividad( "Bailar", "El mejor baile", String.valueOf(urls.get(2))));
+        actividades.add(new Actividad( "Bailar", "El mejor baile", String.valueOf(urls.get(3))));
+        actividades.add(new Actividad( "Bailar", "El mejor baile", String.valueOf(urls.get(4))));
+        actividades.add(new Actividad( "Bailar", "El mejor baile", String.valueOf(urls.get(5))));
+        actividades.add(new Actividad( "Bailar", "El mejor baile", String.valueOf(urls.get(6))));
     }
 
     @Override
