@@ -75,25 +75,5 @@ public class AgendaActividad {
         this.fecha = fecha;
     }
 
-    public boolean insert(Context context){
-
-        boolean newRowId;
-
-        ACSDatabase db = new ACSDatabase(context);
-
-
-        ContentValues values = new ContentValues();
-//      llenar valores
-
-        values.put(COLUMNA_FK_USER, this.getId_usuario());
-        values.put(COLUMNA_FK_ACTIVIDAD, this.getId_actividad());
-        values.put(COLUMNA_HORA, this.getHora());
-        values.put(COLUMNA_FECHA, this.getFecha());
-        values.put(COLUMNA_LUGAR, this.getLugar());
-
-
-        newRowId = db.insert_record(TABLA_AGENDA_ACTIVIDADES, values);
-        return newRowId;
-
-    }
+    
 }

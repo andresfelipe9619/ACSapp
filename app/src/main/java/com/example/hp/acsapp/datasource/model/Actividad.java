@@ -63,20 +63,5 @@ public class Actividad {
         this.icon_url = icon_url;
     }
 
-    public boolean insert(Context context){
 
-        boolean newRowId;
-
-        ACSDatabase db = new ACSDatabase(context);
-
-        ContentValues values = new ContentValues();
-
-        values.put(COLUMNA_NOMBRE, this.getNombre());
-        values.put(COLUMNA_DESCRIPCION, this.getDescripcion());
-        values.put(COLUMNA_URL, this.getIcon_url());
-
-        newRowId = db.insert_record(TABLA_ACTIVIDADES, values);
-        return newRowId;
-
-    }
 }

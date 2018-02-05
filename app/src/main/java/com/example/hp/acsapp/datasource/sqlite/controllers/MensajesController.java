@@ -21,16 +21,16 @@ import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.TABLA_MENSA
 
 public class MensajesController {
 
-    private Context context;
     private ACSDatabase db;
+    Context context;
     private static final String TAG = MensajesController.class.getSimpleName();
 
-    public MensajesController(Context context) {
-        this.context = context;
+    public MensajesController(Context Mcontext) {
+        this.context = Mcontext;
         this.db = new ACSDatabase(context);
     }
 
-    public ArrayList<MensajeMotivacional> getMensajes(){
+    public ArrayList<MensajeMotivacional> listar_mensajes(){
 
         ArrayList<MensajeMotivacional> mensajes = new ArrayList<>();
 

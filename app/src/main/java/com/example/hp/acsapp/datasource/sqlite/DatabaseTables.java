@@ -16,9 +16,9 @@ public class DatabaseTables {
     public static final String SQL_CREATE_ACTIVIDADES = "CREATE TABLE "
             + TABLA_ACTIVIDADES + "("
             + COLUMNA_ID + " INTEGER primary key autoincrement, "
-            + COLUMNA_NOMBRE + "TEXT NOT NULL, "
-            + COLUMNA_DESCRIPCION + "TEXT NOT NULL,"
-            + COLUMNA_URL +"TEXT);";
+            + COLUMNA_NOMBRE + " TEXT NOT NULL, "
+            + COLUMNA_DESCRIPCION + " TEXT NOT NULL,"
+            + COLUMNA_URL +" TEXT);";
 
     //define tabla usuario
     public static final String TABLA_USUARIO = "usuario";
@@ -27,8 +27,8 @@ public class DatabaseTables {
     public static final String SQL_CREATE_USUARIO = "CREATE TABLE "
             + TABLA_USUARIO + "("
             + COLUMNA_ID + " INTEGER primary key autoincrement, "
-            + COLUMNA_FK_CIUDAD + "INTEGER NOT NULL, "
-            + COLUMNA_NOMBRE + "TEXT NOT NULL); ";
+            + COLUMNA_FK_CIUDAD + " INTEGER NOT NULL, "
+            + COLUMNA_NOMBRE + " TEXT NOT NULL); ";
 
     //define tabla agenda_actividades
     public static final String TABLA_AGENDA_ACTIVIDADES = "agenda_actividades";
@@ -41,11 +41,11 @@ public class DatabaseTables {
     public static final String SQL_CREATE_AGENDA = "CREATE TABLE "
             + TABLA_AGENDA_ACTIVIDADES + "("
             + COLUMNA_ID + " INTEGER primary key autoincrement, "
-            + COLUMNA_FK_USER + "INTEGER NOT NULL, "
-            + COLUMNA_FK_ACTIVIDAD + "INTEGER NOT NULL, "
-            + COLUMNA_HORA + "TEXT NOT NULL, "
-            + COLUMNA_FECHA + "TEXT NOT NULL,"
-            + COLUMNA_LUGAR + "TEXT NOT NULL); ";
+            + COLUMNA_FK_USER + " INTEGER NOT NULL, "
+            + COLUMNA_FK_ACTIVIDAD + " INTEGER NOT NULL, "
+            + COLUMNA_HORA + " TEXT NOT NULL, "
+            + COLUMNA_FECHA + " TEXT NOT NULL,"
+            + COLUMNA_LUGAR + " TEXT NOT NULL); ";
 
     //define tabla tecnicas de relajacion
     public static final String TABLA_TECNICAS_RELAJACION = "tecnicas_relajacion";

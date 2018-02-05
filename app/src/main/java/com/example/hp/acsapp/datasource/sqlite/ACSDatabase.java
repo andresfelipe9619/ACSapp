@@ -41,6 +41,7 @@ public class ACSDatabase extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(SQL_CREATE_MENSAJES_ERROR);
         sqLiteDatabase.execSQL(SQL_CREATE_ACTIVIDADES);
 //
+        StartData data = new StartData();
     }
 
     @Override
@@ -62,6 +63,7 @@ public class ACSDatabase extends SQLiteOpenHelper {
             database.close();
             return true;
         }
+
     }
 
     public Cursor get_records(String query, String[] args) {
