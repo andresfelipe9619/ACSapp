@@ -24,7 +24,7 @@ public class StartData {
     private void InsertMensajesError(){
         ContentValues errorBd = new ContentValues();
 
-        errorBd.put("id", 0);
+        errorBd.put("id", 10);
         errorBd.put("mensaje", "No se encuentran registros");
 
         db.insert_record("mensaje_error",errorBd);

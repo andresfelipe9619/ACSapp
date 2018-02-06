@@ -84,7 +84,7 @@ public class DatabaseTables {
     public static final String SQL_CREATE_CONTACTOS = "CREATE TABLE "
             + TABLA_CONTACTOS + "("
             + COLUMNA_ID + " INTEGER primary key autoincrement, "
-            + COLUMNA_NOMBRE + " TEXT NOT NULL"
+            + COLUMNA_NOMBRE + " TEXT NOT NULL,"
             + COLUMNA_TELEFONO + " TEXT NOT NULL,"
             + COLUMNA_FK_USER + " INTEGER NOT NULL);";
 
@@ -108,7 +108,7 @@ public class DatabaseTables {
     public static final String SQL_CREATE_VER_MENSAJES = "CREATE TABLE "
             + TABLA_VER_MENSAJES + "("
             + COLUMNA_ID + " INTEGER primary key autoincrement, "
-            + COLUMNA_FK_MENSAJES + " INTEGER NOT NULL"
+            + COLUMNA_FK_MENSAJES + " INTEGER NOT NULL,"
             + COLUMNA_FK_USER + " INTEGER NOT NULL);";
 
     //define tabla ver_tecnica
@@ -118,7 +118,7 @@ public class DatabaseTables {
     public static final String SQL_CREATE_VER_TECNICAS = "CREATE TABLE "
             + TABLA_VER_TECNICAS + "("
             + COLUMNA_ID + " INTEGER primary key autoincrement, "
-            + COLUMNA_FK_TECNICAS + " INTEGER NOT NULL"
+            + COLUMNA_FK_TECNICAS + " INTEGER NOT NULL,"
             + COLUMNA_FK_USER + " INTEGER NOT NULL);";
 
     //define tabla mensajes_error

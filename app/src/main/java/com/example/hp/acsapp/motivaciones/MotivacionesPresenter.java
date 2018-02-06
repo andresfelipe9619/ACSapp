@@ -33,7 +33,7 @@ public class MotivacionesPresenter implements MotivacionesContract.Presenter {
         // SE DEBE IMPLEMENTAR CALLBACK PARA EL ACCESO A LOS DATOS
         //ON DATA LOADED Y ON DATA NOT AVAILABLE
         try{
-            List<MensajeMotivacional> mensajesListos =  mMensajesController.getMensajes();
+            List<MensajeMotivacional> mensajesListos =  mMensajesController.listar_mensajes();
             proccessMotivaciones(mensajesListos);
         }catch (Exception e){
             //vistaMotivacion.showLoadingError();

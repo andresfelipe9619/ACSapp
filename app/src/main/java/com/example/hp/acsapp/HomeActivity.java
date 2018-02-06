@@ -63,7 +63,7 @@ public class HomeActivity extends AppCompatActivity implements ActividadesFragme
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        //StartData data = new StartData(this);
+        StartData data = new StartData(this);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         final BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
