@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import com.example.hp.acsapp.datasource.model.MensajeMotivacional;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.content.ContentValues.TAG;
 import static android.support.v4.util.Preconditions.checkNotNull;
 
 public class MotivacionesFragment extends Fragment
@@ -28,6 +30,8 @@ public class MotivacionesFragment extends Fragment
     private MotivacionesContract.Presenter mPresenter;
     private MotivacionesAdapter mAdapter;
     private RecyclerView mRecycler;
+    private static final String TAG = MotivacionesFragment.class.getSimpleName() ;
+
 
     public MotivacionesFragment() {
         // Required empty public constructor
@@ -41,10 +45,6 @@ public class MotivacionesFragment extends Fragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        misMensajes.add(new MensajeMotivacional(1,"Animate!","No te mates way","antisuicidio"));
-//        misMensajes.add(new MensajeMotivacional(2,"Animate!","No te mates way","antisuicidio"));
-        mAdapter = new MotivacionesAdapter(new ArrayList<MensajeMotivacional>(0), this);
-
     }
 
     @Override
@@ -60,6 +60,14 @@ public class MotivacionesFragment extends Fragment
         View root = inflater.inflate(R.layout.fragment_motivaciones, container, false);
         mRecycler = (RecyclerView) root.findViewById(R.id.rv_motivaciones);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        Log.d(TAG,"CREATING ADAPTER IN ONCREATEVIEW");
+
+        List<MensajeMotivacional> misMensajes = new ArrayList<>();
+        misMensajes.add(new MensajeMotivacional(1,"Animate!","No te mates way","antisuicidio"));
+        misMensajes.add(new MensajeMotivacional(2,"Animate!","No te mates way","antisuicidio"));
+        misMensajes.add(new MensajeMotivacional(3,"Animate!","No te mates way","antisuicidio"));
+        mAdapter = new MotivacionesAdapter(misMensajes, this);
+        //mAdapter = new MotivacionesAdapter(new ArrayList<MensajeMotivacional>(0), this);
 
         mRecycler.setHasFixedSize(true);
         mRecycler.setLayoutManager(layoutManager);
@@ -107,6 +115,10 @@ public class MotivacionesFragment extends Fragment
 
     @Override
     public void showMotivaciones(List<MensajeMotivacional> mensajes) {
+        Log.d(TAG,"SHOWMOTIVACIONES INVOKED");
+        Log.d(TAG,"WELL..."+mensajes.get(0).getTitulo());
+//        mAdapter = new MotivacionesAdapter(mensajes, this);
+//        mRecycler.setAdapter(mAdapter);
         mAdapter.replaceData(mensajes);
         //SE DEBE OCULTAR LA VISTA DE QUE NO HAY Y MOSTRAR LA DEL RECYCLER
     }

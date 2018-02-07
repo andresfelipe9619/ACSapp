@@ -24,6 +24,7 @@ public interface MotivacionesContract {
         void openMotivacionDetails(MensajeMotivacional motivacion);
         void setMotivacionSeen(MensajeMotivacional motivacion);
 
+
     }
 
 }

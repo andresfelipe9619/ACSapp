@@ -22,17 +22,17 @@ public class EmergenciaActivity extends AppCompatActivity implements Motivacione
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emergencia);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = this.getSupportActionBar();
-
-
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        ActionBar actionBar = this.getSupportActionBar();
+//
+//
+//        if (actionBar != null) {
+//            actionBar.setDisplayHomeAsUpEnabled(true);
+//        }
 
         EmergenciaFragment fragmentoEmergencia = new EmergenciaFragment();
-        presentadorEmergencia = new EmergenciaPresenter(this, fragmentoEmergencia);
+        presentadorEmergencia = new EmergenciaPresenter(fragmentoEmergencia);
         presentadorEmergencia.start();
     }
 

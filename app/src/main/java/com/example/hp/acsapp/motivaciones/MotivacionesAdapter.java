@@ -43,14 +43,13 @@ public class MotivacionesAdapter extends RecyclerView.Adapter<MotivacionesAdapte
         View view = inflater.inflate(layoutIdForListItem, parent, shouldAttachToParentImmediately);
         MotivacionViewHolder viewHolder = new MotivacionViewHolder(view);
 
-
         return viewHolder;
     }
 
     public void replaceData(List<MensajeMotivacional> mensajes){
+
         setList(mensajes);
         Log.d(TAG,"REPLACE");
-
         notifyDataSetChanged();
     }
 
@@ -61,7 +60,7 @@ public class MotivacionesAdapter extends RecyclerView.Adapter<MotivacionesAdapte
     @Override
     public void onBindViewHolder(MotivacionViewHolder holder, int position) {
         holder.motivacionTitle.setText(mensajes_motivacionales.get(position).getTitulo());
-        Log.d(TAG, mensajes_motivacionales.get(position).getTitulo());
+
         holder.motivacionDescription.setText(mensajes_motivacionales.get(position).getDescripcion());
     }
 

@@ -19,17 +19,17 @@
             android:layout_marginBottom="30dp"
             android:gravity="center"
             android:text="@string/titulo_tecnicas"
-            app:layout_constraintBottom_toTopOf="@+id/btn_mensajes_motivacionale"
+            app:layout_constraintBottom_toTopOf="@+id/btn_otros_recursos"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 
         <Button
-            android:id="@+id/btn_mensajes_motivacionale"
+            android:id="@+id/btn_otros_recursos"
             android:layout_width="180dp"
             android:layout_height="55dp"
             android:layout_marginBottom="30dp"
             android:gravity="center"
-            android:text="@string/titulo_mensaes_motivacionales"
+            android:text="Otros Recursos"
             app:layout_constraintBottom_toTopOf="@+id/btn_centros_emergencia"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

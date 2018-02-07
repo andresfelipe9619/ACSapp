@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 
 import com.example.hp.acsapp.R;
 import com.example.hp.acsapp.emergencia.EmergenciaActivity;
-import com.example.hp.acsapp.motivaciones.MotivacionesActivity;
+import com.example.hp.acsapp.otrosrecuros.OtrosRecursosActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,7 +60,7 @@ public class EstrategiasFragment extends Fragment implements EstrategiasContract
         super.onViewCreated(view, savedInstanceState);
         btn_tecnicas = view.findViewById(R.id.btn_tecnicas_relajacion);
         btn_emergencia = view.findViewById(R.id.btn_centros_emergencia);
-        btn_mensajes = view.findViewById(R.id.btn_mensajes_motivacionale);
+        btn_mensajes = view.findViewById(R.id.btn_otros_recursos);
         content = view.findViewById(R.id.content);
         btn_tecnicas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,7 +118,7 @@ public class EstrategiasFragment extends Fragment implements EstrategiasContract
 
     @Override
     public void showMensajesMotivacionales() {
-        Intent intent = new Intent(getContext(), MotivacionesActivity.class);
+        Intent intent = new Intent(getContext(), OtrosRecursosActivity.class);
         startActivity(intent);
     }
 
@@ -130,7 +130,6 @@ public class EstrategiasFragment extends Fragment implements EstrategiasContract
 
     @Override
     public void showTecnicasRelajacion() {
-
 
     }
 

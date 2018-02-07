@@ -17,9 +17,9 @@ public class EmergenciaPresenter implements EmergenciaContract.Presenter{
     private EmergenciaContract.View vistaEmergencias;
     private CentroEmergenciaController mController;
 
-    public EmergenciaPresenter(Context context, EmergenciaContract.View vistaEmergencias) {
+    public EmergenciaPresenter(EmergenciaContract.View vistaEmergencias) {
         this.vistaEmergencias = vistaEmergencias;
-        mController = new CentroEmergenciaController();
+        //mController = new CentroEmergenciaController();
         vistaEmergencias.setPresenter(this);
     }
 

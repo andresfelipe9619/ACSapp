@@ -26,7 +26,7 @@ public class MotivacionesActivity extends AppCompatActivity implements Motivacio
 //        }
 
         MotivacionesFragment fragmentoMotivaciones = new MotivacionesFragment();
-        presentadorMotivaciones = new MotivacionesPresenter(this, fragmentoMotivaciones);
+        presentadorMotivaciones = new MotivacionesPresenter(fragmentoMotivaciones);
         presentadorMotivaciones.start();
     }
 

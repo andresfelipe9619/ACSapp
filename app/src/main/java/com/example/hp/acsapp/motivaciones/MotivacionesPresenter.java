@@ -17,18 +17,19 @@ public class MotivacionesPresenter implements MotivacionesContract.Presenter {
 
     private static final String TAG = MotivacionesPresenter.class.getSimpleName() ;
     private final MotivacionesContract.View vistaMotivaciones;
-    private final MensajesController mMensajesController;
+   // private final MensajesController mMensajesController;
 
-    public MotivacionesPresenter(Context context, MotivacionesContract.View view, MensajesController controller) {
+    public MotivacionesPresenter(MotivacionesContract.View view) {
         vistaMotivaciones = view;
 //        mMensajesController = controller;
-        mMensajesController  = new MensajesController(context);
+      //  mMensajesController  = new MensajesController();
+
         vistaMotivaciones.setPresenter(this);
     }
 
     @Override
     public void start() {
-        loadMotivaciones();
+        Log.d(TAG,"PRESENTER STARTED");loadMotivaciones();
     }
 
     @Override
@@ -36,19 +37,17 @@ public class MotivacionesPresenter implements MotivacionesContract.Presenter {
        //vistaMotivaciones.showMotivaciones();
         // SE DEBE IMPLEMENTAR CALLBACK PARA EL ACCESO A LOS DATOS
         //ON DATA LOADED Y ON DATA NOT AVAILABLE
+
         try{
 //            List<MensajeMotivacional> mensajesListos =  mMensajesController.listar_mensajes();
             List<MensajeMotivacional> mensajes = new ArrayList<>();
             mensajes.add(new MensajeMotivacional(5,"hola","MUNDO","acs"));
-            Log.d(TAG,"PROCCESS..");
-
+            Log.d(TAG,"INTO PRESENTER INVOKING PROCCESS..");
             proccessMotivaciones(mensajes);
-
 
         }catch (Exception e){
             //vistaMotivacion.showLoadingError();
         }
-
     }
 
 
@@ -67,9 +66,10 @@ public class MotivacionesPresenter implements MotivacionesContract.Presenter {
             vistaMotivaciones.showNoMotivaciones();
             Log.d(TAG,"NO");
 
+
         }else{
             Log.d(TAG,"SI");
-
+            Log.d(TAG,mensajes.get(0).getTitulo());
             vistaMotivaciones.showMotivaciones(mensajes);
         }
     }
