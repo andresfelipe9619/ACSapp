@@ -123,7 +123,7 @@ public class DatabaseTables {
 
     //define tabla mensajes_error
 
-    public static final String SQL_CREATE_MENSAJES_ERROR = "CREATE TABLE mensaje_error(id INTEGER primary key, mensaje TEXT)";
+    public static final String SQL_CREATE_MENSAJES_ERROR = "CREATE TABLE mensaje_error(id INTEGER primary key autoincrement, mensaje TEXT)";
 
 
 }

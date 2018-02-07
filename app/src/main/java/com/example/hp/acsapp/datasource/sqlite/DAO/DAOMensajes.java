@@ -33,19 +33,20 @@ public class DAOMensajes {
         values.put(COLUMNA_TITULO, mensaje.getTitulo());
         values.put(COLUMNA_DESCRIPCION, mensaje.getDescripcion());
         values.put(COLUMNA_AUTOR, mensaje.getAutor());
+        boolean result = db.insert_record(TABLA_MENSAJES, values);
 
-       return db.insert_record(TABLA_MENSAJES, values);
+       return result;
     }
 
     public ArrayList<MensajeMotivacional> listar_mensajes(){
 
         ArrayList<MensajeMotivacional> mensajes = new ArrayList<>();
 
+        //mensajes = db.listar_mensajes();
         String query = "SELECT * FROM " + TABLA_MENSAJES + ";";
         Cursor resultado = db.get_records(query, null);
 
-        try {
-            while (resultado.moveToNext()) {
+         while (resultado.moveToNext()) {
                 String id = resultado.getString(0);
                 String titulo = resultado.getString(1);
                 String descripcion = resultado.getString(2);
@@ -58,10 +59,8 @@ public class DAOMensajes {
 //                mensaje += "2: " + resultado.getString(2);
 //                mensaje += "3: " + resultado.getString(3);
 //                Log.d(TAG, mensaje);
-            }
-        } finally {
-            resultado.close();
-        }
+         }
+
 
         return mensajes;
     }
@@ -89,11 +88,13 @@ public class DAOMensajes {
         values.put(COLUMNA_DESCRIPCION, mensaje.getDescripcion());
         values.put(COLUMNA_AUTOR, mensaje.getAutor());
 
-        return db.update_record(TABLA_MENSAJES, values);
+        boolean retorno = db.update_record(TABLA_MENSAJES, values);
+        return retorno;
     }
 
     public boolean delete(int id){
-        return db.delete_record(TABLA_MENSAJES, id);
+        boolean retorno = db.delete_record(TABLA_MENSAJES, id);
+        return retorno;
     }
 
 }

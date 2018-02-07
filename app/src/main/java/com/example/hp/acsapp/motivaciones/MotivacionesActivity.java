@@ -16,14 +16,14 @@ public class MotivacionesActivity extends AppCompatActivity implements Motivacio
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motivaciones);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = this.getSupportActionBar();
-
-
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        ActionBar actionBar = this.getSupportActionBar();
+//
+//
+//        if (actionBar != null) {
+//            actionBar.setDisplayHomeAsUpEnabled(true);
+//        }
 
         MotivacionesFragment fragmentoMotivaciones = new MotivacionesFragment();
         presentadorMotivaciones = new MotivacionesPresenter(this, fragmentoMotivaciones);

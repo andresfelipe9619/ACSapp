@@ -1,7 +1,10 @@
 package com.example.hp.acsapp.emergencia;
 
+import android.content.Context;
+
 import com.example.hp.acsapp.datasource.model.CentroEmergencia;
 import com.example.hp.acsapp.datasource.model.Ciudad;
+import com.example.hp.acsapp.datasource.sqlite.controllers.CentroEmergenciaController;
 
 import java.util.List;
 
@@ -10,14 +13,44 @@ import java.util.List;
  */
 
 public class EmergenciaPresenter implements EmergenciaContract.Presenter{
+
+    private EmergenciaContract.View vistaEmergencias;
+    private CentroEmergenciaController mController;
+
+    public EmergenciaPresenter(Context context, EmergenciaContract.View vistaEmergencias) {
+        this.vistaEmergencias = vistaEmergencias;
+        mController = new CentroEmergenciaController();
+        vistaEmergencias.setPresenter(this);
+    }
+
     @Override
     public void start() {
-
+        loadCentrosEmergencia();
     }
 
     @Override
     public void loadLocalEmergencias(Ciudad ciudad) {
 
+    }
+
+    @Override
+    public void loadCentrosEmergencia() {
+
+        try {
+            List<CentroEmergencia> centrosListos = mController.listar_centros();
+            proccessEmergencias(centrosListos);
+
+        }catch (Exception e){
+
+        }
+    }
+
+    public void proccessEmergencias(List<CentroEmergencia> centros){
+        if(centros.isEmpty()){
+            vistaEmergencias.showNoCentrosEmergencia();
+        }else{
+            vistaEmergencias.showCentrosEmergencia(centros);
+        }
     }
 
     @Override

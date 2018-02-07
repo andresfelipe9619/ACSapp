@@ -20,11 +20,13 @@ public interface EmergenciaContract {
         void showMapsOption();
         void showNotFoundLocalCentros();
         void showLocalCountryCentros();
-
+        void showNoCentrosEmergencia();
+        void showCentrosEmergencia(List<CentroEmergencia> centros);
     }
 
     interface Presenter extends BasePresenter {
         void loadLocalEmergencias(Ciudad ciudad);
+        void loadCentrosEmergencia();
         void openMapsOption(String direccion);
         void openCallOption(int celnumber);
         void openCentroEmergenciaDetail(CentroEmergencia centro);

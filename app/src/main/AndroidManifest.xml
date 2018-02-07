@@ -31,7 +31,7 @@
             android:name=".motivaciones.MotivacionesActivity"
             android:label="@string/titulo_mensaes_motivacionales"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity
             android:name=".SplashScreenActivity"
             android:noHistory="true"
@@ -45,15 +45,19 @@
         <activity
             android:name=".contactos.addeditcontacto.AddEditContactoActivity"
             android:label="@string/title_activity_add_edit_contacto"
-            android:theme="@style/AppTheme.NoActionBar" />
+             />
         <activity
             android:name=".contactos.contactodetail.ContactoDetailActivity"
             android:label="@string/title_activity_contacto_detail"
-            android:theme="@style/AppTheme.NoActionBar" />
+             />
         <activity android:name=".motivaciones.motivaciondetails.MotivacionDetailActivity" />
         <activity
             android:name=".tecnicas.TecincasActivity"
             android:label="@string/title_activity_tecincas"
+             />
+        <activity
+            android:name=".emergencia.emergenciadetails.EmergenciaDetailsActivity"
+            android:label="@string/title_activity_emergencia_details"
             android:theme="@style/AppTheme"></activity>
     </application>
 

@@ -16,4 +16,6 @@
     <string name="title_activity_add_edit_contacto">AddEditContactoActivity</string>
     <string name="title_activity_contacto_detail">ContactoDetailActivity</string>
     <string name="title_activity_tecincas">TecincasActivity</string>
+    <string name="title_activity_emergencia_details">EmergenciaDetailsActivity</string>
+    <string name="action_settings">Settings</string>
 </resources>

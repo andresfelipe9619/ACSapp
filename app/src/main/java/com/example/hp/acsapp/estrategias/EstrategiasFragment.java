@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.example.hp.acsapp.R;
+import com.example.hp.acsapp.emergencia.EmergenciaActivity;
 import com.example.hp.acsapp.motivaciones.MotivacionesActivity;
 
 /**
@@ -123,7 +124,8 @@ public class EstrategiasFragment extends Fragment implements EstrategiasContract
 
     @Override
     public void showCentrosAtencion() {
-
+        Intent intent = new Intent(getContext(), EmergenciaActivity.class);
+        startActivity(intent);
     }
 
     @Override

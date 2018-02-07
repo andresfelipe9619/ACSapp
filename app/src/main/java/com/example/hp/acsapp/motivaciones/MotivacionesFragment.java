@@ -20,14 +20,6 @@ import java.util.List;
 
 import static android.support.v4.util.Preconditions.checkNotNull;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link MotivacionesFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link MotivacionesFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class MotivacionesFragment extends Fragment
         implements MotivacionesContract.View, MotivacionesAdapter.MotivacionItemListener
 {
@@ -66,7 +58,7 @@ public class MotivacionesFragment extends Fragment
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_motivaciones, container, false);
-        mRecycler = (RecyclerView) root.findViewById(R.id.rv_numbers);
+        mRecycler = (RecyclerView) root.findViewById(R.id.rv_motivaciones);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
 
         mRecycler.setHasFixedSize(true);
@@ -125,7 +117,7 @@ public class MotivacionesFragment extends Fragment
     }
 
     @Override
-    public void showMotivacionSeen(String motivacionId) {
+    public void showMotivacionSeen() {
 
     }
 

@@ -2,6 +2,7 @@ package com.example.hp.acsapp.motivaciones;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import com.example.hp.acsapp.datasource.model.MensajeMotivacional;
 
 import java.util.List;
 
+import static android.content.ContentValues.TAG;
+
 /**
  * Created by HP on 1/24/2018.
  */
@@ -20,12 +23,13 @@ public class MotivacionesAdapter extends RecyclerView.Adapter<MotivacionesAdapte
 
 //    final private ListItemClickListener onClickListener;
     private List<MensajeMotivacional> mensajes_motivacionales;
-    private MotivacionItemListener motivacion_listener;
+    private MotivacionItemListener mListener;
+    private static String TAG = MotivacionesAdapter.class.getSimpleName();
 
 
     public MotivacionesAdapter(List<MensajeMotivacional> mensajes, MotivacionItemListener listener){
         setList(mensajes);
-        motivacion_listener = listener;
+        mListener = listener;
     }
 
 
@@ -45,6 +49,8 @@ public class MotivacionesAdapter extends RecyclerView.Adapter<MotivacionesAdapte
 
     public void replaceData(List<MensajeMotivacional> mensajes){
         setList(mensajes);
+        Log.d(TAG,"REPLACE");
+
         notifyDataSetChanged();
     }
 
@@ -55,6 +61,7 @@ public class MotivacionesAdapter extends RecyclerView.Adapter<MotivacionesAdapte
     @Override
     public void onBindViewHolder(MotivacionViewHolder holder, int position) {
         holder.motivacionTitle.setText(mensajes_motivacionales.get(position).getTitulo());
+        Log.d(TAG, mensajes_motivacionales.get(position).getTitulo());
         holder.motivacionDescription.setText(mensajes_motivacionales.get(position).getDescripcion());
     }
 
@@ -68,8 +75,7 @@ public class MotivacionesAdapter extends RecyclerView.Adapter<MotivacionesAdapte
     class MotivacionViewHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener {
 
-        TextView motivacionTitle;
-        TextView motivacionDescription;
+        TextView motivacionTitle, motivacionDescription;
 
         public MotivacionViewHolder(View itemView) {
             super(itemView);
@@ -86,7 +92,7 @@ public class MotivacionesAdapter extends RecyclerView.Adapter<MotivacionesAdapte
         @Override
         public void onClick(View v) {
             int clickedPosition = getAdapterPosition();
-           motivacion_listener.onListItemClick(mensajes_motivacionales.get(clickedPosition));
+           mListener.onListItemClick(mensajes_motivacionales.get(clickedPosition));
         }
     }
 

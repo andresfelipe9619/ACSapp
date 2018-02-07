@@ -10,6 +10,7 @@ import com.example.hp.acsapp.datasource.sqlite.ACSDatabase;
 import com.example.hp.acsapp.datasource.sqlite.DAO.DAOMensajes;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_AUTOR;
 import static com.example.hp.acsapp.datasource.sqlite.DatabaseTables.COLUMNA_DESCRIPCION;
@@ -31,9 +32,12 @@ public class MensajesController {
         this.daoMensajes = new DAOMensajes(context);
     }
 
-    public ArrayList<MensajeMotivacional> listar_mensajes(){
-        return daoMensajes.listar_mensajes();
-    };
+    public List<MensajeMotivacional> listar_mensajes(){
+//        return daoMensajes.listar_mensajes();
+    List<MensajeMotivacional> mensajes = new ArrayList<>();
+    mensajes.add(new MensajeMotivacional(5,"hola","MUNDO","acs"));
+    return mensajes;
+    }
 
     public boolean insert(MensajeMotivacional mensaje) {
         return daoMensajes.insert(mensaje);

@@ -19,7 +19,7 @@ public class EstrategiasPresenter implements EstrategiasContract.Presenter {
 
     @Override
     public void openCentrosAtencion() {
-
+        vistaEstrategias.showCentrosAtencion();
     }
 
     @Override

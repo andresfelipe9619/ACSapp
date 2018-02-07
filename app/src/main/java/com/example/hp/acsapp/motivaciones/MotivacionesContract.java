@@ -15,7 +15,7 @@ public interface MotivacionesContract {
     interface View extends BaseView<Presenter>{
         void showMotivaciones(List<MensajeMotivacional> mensajes);
         void showMotivacionDetail(String motivacionId);
-        void showMotivacionSeen(String motivacionId);
+        void showMotivacionSeen();
         void showNoMotivaciones();
     }
 
