@@ -146,7 +146,7 @@ public class ACSDatabase extends SQLiteOpenHelper {
 
     public boolean update_record(String tabla, ContentValues values) {
 
-        SQLiteDatabase database = this.getReadableDatabase();
+        SQLiteDatabase database = this.getWritableDatabase();
 
         int i = database.update(tabla, values, COLUMNA_ID + " = ?", new String[]{String.valueOf(values.get(COLUMNA_ID))});
 

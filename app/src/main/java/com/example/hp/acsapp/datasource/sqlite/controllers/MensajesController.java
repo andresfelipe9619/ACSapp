@@ -51,4 +51,7 @@ public class MensajesController {
         return daoMensajes.update(mensaje);
     }
 
+    public boolean delete(int id){
+        return daoMensajes.delete(id);
+    }
 }
