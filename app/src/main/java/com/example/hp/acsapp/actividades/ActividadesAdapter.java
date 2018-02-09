@@ -2,6 +2,7 @@ package com.example.hp.acsapp.actividades;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ public class ActividadesAdapter extends RecyclerView.Adapter<ActividadesAdapter.
 
     List<Actividad> mActividades;
     ActividadItemListener mlistener;
+    Context context;
 
     public ActividadesAdapter(List<Actividad> actividades, ActividadItemListener listener){
         setList(actividades);
@@ -27,7 +29,7 @@ public class ActividadesAdapter extends RecyclerView.Adapter<ActividadesAdapter.
 
     @Override
     public ActividadViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
+        context = parent.getContext();
         int layoutIdForListItem = R.layout.actividad_list_item;
         LayoutInflater inflater = LayoutInflater.from(context);
         boolean shouldAttachToParentImmediately = false;
@@ -57,6 +59,10 @@ public class ActividadesAdapter extends RecyclerView.Adapter<ActividadesAdapter.
             super(itemView);
             mImage = itemView.findViewById(R.id.imageActividadItem);
             mImage.setAdjustViewBounds(true);
+            TypedValue outValue = new TypedValue();
+            context.getTheme().resolveAttribute(android.R.attr.selectableItemBackground, outValue, true);
+            mImage.setBackgroundResource(outValue.resourceId);
+            mImage.setClickable(true);
             mImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
             mImage.setPadding(8, 8, 8, 8);
             mImage.setOnClickListener(this);

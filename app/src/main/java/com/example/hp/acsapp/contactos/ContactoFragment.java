@@ -65,6 +65,18 @@ public class ContactoFragment extends Fragment implements ContactoContract.View{
                 selectContact();
             }
         });
+//        btn_amigo2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                selectContact();
+//            }
+//        });
+//        btn_amigo2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                selectContact();
+//            }
+//        });
 
     }
 
@@ -83,6 +95,8 @@ public class ContactoFragment extends Fragment implements ContactoContract.View{
     }
 
     public void selectContact() {
+        Bundle bundle = new Bundle();
+
         Intent pickContactIntent = new Intent(Intent.ACTION_PICK, Uri.parse("content://contacts"));
         pickContactIntent.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE); // Show user only contacts w/ phone numbers
         startActivityForResult(pickContactIntent, PICK_CONTACT_REQUEST);

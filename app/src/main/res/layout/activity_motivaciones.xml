@@ -3,12 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.hp.acsapp.motivaciones.MotivacionesActivity">
 
-    <fragment
-        android:id="@+id/fragment"
-        android:name="com.example.hp.acsapp.motivaciones.MotivacionesFragment"
+    <!--<fragment-->
+        <!--android:id="@+id/fragment"-->
+        <!--android:name="com.example.hp.acsapp.motivaciones.MotivacionesFragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />
+        -->
+<include layout="@layout/toolbar"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:id="@+id/rv_motivaciones"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
 
 </android.support.design.widget.CoordinatorLayout>

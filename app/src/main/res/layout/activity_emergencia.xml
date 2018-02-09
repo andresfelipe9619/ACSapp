@@ -5,9 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.hp.acsapp.emergencia.EmergenciaActivity">
-    <fragment
-        android:id="@+id/fragment"
-        android:name="com.example.hp.acsapp.emergencia.EmergenciaFragment"
+
+    <!--<fragment-->
+        <!--android:id="@+id/fragment"-->
+        <!--android:name="com.example.hp.acsapp.emergencia.EmergenciaFragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
+    <include layout="@layout/toolbar"/>
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:id="@+id/rv_emergencias"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
 </android.support.design.widget.CoordinatorLayout>

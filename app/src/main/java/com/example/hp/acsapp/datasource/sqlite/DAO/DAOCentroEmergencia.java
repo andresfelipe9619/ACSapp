@@ -3,6 +3,7 @@ package com.example.hp.acsapp.datasource.sqlite.DAO;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 
 import com.example.hp.acsapp.datasource.model.CentroEmergencia;
 import com.example.hp.acsapp.datasource.sqlite.ACSDatabase;
@@ -29,13 +30,16 @@ public class DAOCentroEmergencia {
     }
 
     public boolean insert(CentroEmergencia centro){
+        SQLiteDatabase database = db.getWritableDatabase();
+
         ContentValues values = new ContentValues();
 
         values.put(COLUMNA_NOMBRE, centro.getNombre());
         values.put(COLUMNA_TELEFONO, centro.getTelefono());
         values.put(COLUMNA_DIRECCION, centro.getDireccion());
 
-        return db.insert_record(TABLA_CENTROS_EMERGENCIA, values);
+        return database.insert(TABLA_CENTROS_EMERGENCIA, null,values);
+        //return db.insert_record(TABLA_CENTROS_EMERGENCIA, values);
     }
 
     public ArrayList<CentroEmergencia> listar_centros(){

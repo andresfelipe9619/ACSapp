@@ -31,7 +31,5 @@ public interface EmergenciaContract {
         void openCallOption(int celnumber);
         void openCentroEmergenciaDetail(CentroEmergencia centro);
         void openLocalCountryCentros(List<CentroEmergencia> centros);
-
-
     }
 }

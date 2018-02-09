@@ -29,7 +29,8 @@ public class MotivacionesPresenter implements MotivacionesContract.Presenter {
 
     @Override
     public void start() {
-        Log.d(TAG,"PRESENTER STARTED");loadMotivaciones();
+        Log.d(TAG,"PRESENTER STARTED");
+        loadMotivaciones();
     }
 
     @Override
@@ -68,7 +69,7 @@ public class MotivacionesPresenter implements MotivacionesContract.Presenter {
 
 
         }else{
-            Log.d(TAG,"SI");
+            Log.d(TAG,"SI hay mensajes");
             Log.d(TAG,mensajes.get(0).getTitulo());
             vistaMotivaciones.showMotivaciones(mensajes);
         }

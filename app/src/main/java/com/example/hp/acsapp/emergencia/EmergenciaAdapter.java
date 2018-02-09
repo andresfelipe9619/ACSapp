@@ -2,6 +2,7 @@ package com.example.hp.acsapp.emergencia;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.hp.acsapp.R;
 import com.example.hp.acsapp.datasource.model.CentroEmergencia;
+import com.example.hp.acsapp.datasource.model.MensajeMotivacional;
 
 import java.util.List;
 
@@ -24,6 +26,7 @@ public class EmergenciaAdapter extends RecyclerView.Adapter<EmergenciaAdapter.Em
     public EmergenciaAdapter(List<CentroEmergencia> emergencias, EmergenciaItemListener listener){
         centrosEmergencia = emergencias;
         mListener = listener;
+        setList(emergencias);
     }
 
     @Override
@@ -31,9 +34,8 @@ public class EmergenciaAdapter extends RecyclerView.Adapter<EmergenciaAdapter.Em
         Context context = parent.getContext();
         int layoutIdForListItem = R.layout.emergencia_list_item;
         LayoutInflater inflater = LayoutInflater.from(context);
-        boolean shouldAttachToParentImmediately = false;
 
-        View view = inflater.inflate(layoutIdForListItem, parent, shouldAttachToParentImmediately);
+        View view = inflater.inflate(layoutIdForListItem, parent, false);
         EmergenciaViewHolder viewHolder = new EmergenciaViewHolder(view);
 
 
@@ -46,12 +48,13 @@ public class EmergenciaAdapter extends RecyclerView.Adapter<EmergenciaAdapter.Em
     }
 
     private void setList(List<CentroEmergencia> emergencias){
-        centrosEmergencia = emergencias;
+        centrosEmergencia.addAll(emergencias);
     }
     @Override
     public void onBindViewHolder(EmergenciaViewHolder holder, int position) {
-//        holder.motivacionTitle.setText(mensajes_motivacionales.get(position).getTitulo());
-//        holder.motivacionDescription.setText(mensajes_motivacionales.get(position).getDescripcion());
+        holder.emergenciaName.setText(centrosEmergencia.get(position).getNombre());
+        holder.emergenciaAddress.setText(centrosEmergencia.get(position).getDireccion());
+        holder.emergenciaNumber.setText(centrosEmergencia.get(position).getTelefono());
 
     }
 
@@ -59,6 +62,7 @@ public class EmergenciaAdapter extends RecyclerView.Adapter<EmergenciaAdapter.Em
     public int getItemCount() {
         return centrosEmergencia.size();
     }
+
 
     public class EmergenciaViewHolder extends RecyclerView.ViewHolder
     implements View.OnClickListener{
@@ -71,7 +75,6 @@ public class EmergenciaAdapter extends RecyclerView.Adapter<EmergenciaAdapter.Em
             emergenciaName = (TextView) itemView.findViewById(R.id.tv_emergencia_title);
             emergenciaNumber = (TextView) itemView.findViewById(R.id.tv_emergencia_number);
             itemView.setOnClickListener(this);
-
         }
 
         @Override
